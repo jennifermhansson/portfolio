@@ -1,0 +1,96 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #f5f7ff, #f8f4fb);
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
+.hero {
+  padding: 6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  display: inline-block;
+  background: #f4e3ff;
+  padding: 0.5rem 2rem;
+  border-radius: 999px;
+  color: #43175f;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#profile-image {
+  display: flex;
+  width: 200px;
+  clip-path: xywh(0 5px 100% 75% round 15% 0);
+  box-shadow: 10px 5px 5px red;
+}
+
+.highlight {
+  color: #8b5cf6;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0b0b22;
+  color: #fff;
+  border: none;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #0b0b22;
+  border: 1px solid #0b0b22;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 3rem;
+  background: transparent;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: 500;
+}
+.icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.icons i {
+  font-size: 1.5rem;
+  color: #0b0b22;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.icons i:hover {
+  color: #8b5cf6;
+}
