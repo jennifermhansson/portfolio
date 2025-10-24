@@ -9,7 +9,8 @@ function Hero() {
         <img id="profile-image" src="\profilephoto.png" alt="pic" />
       </div>
       <h2>
-        An aspiring <span className="highlight">Fullstack Developer</span>
+        An aspiring{" "}
+        <span className="highlight">Fullstack(snack ;) Developer</span>
       </h2>
       <h3> *** Work in progress ***</h3>
       <p className="description">

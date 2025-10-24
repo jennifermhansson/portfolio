@@ -32,7 +32,7 @@ function Tsparticles() {
         },
         interactivity: {
           events: {
-            onClick: { enable: true, mode: "push" },
+            onClick: { enable: true, mode: "repulse" },
             onHover: { enable: true, mode: "attract" },
           },
           modes: { bubble: { distance: 120, size: 8, duration: 1 } },
