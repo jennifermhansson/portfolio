@@ -1,28 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
 body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(180deg, #f5f7ff, #cfe7ff);
+  font-family: "Inconsolata", sans-serif;
   margin: 0;
   color: #333;
   text-align: center;
-}
-.hero {
-  position: relative;
-  padding: 6rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  background: linear-gradient(180deg, #f5f7ff, #cfe7ff);
 }
 
-#tsparticles {
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 1.5rem;
+  margin-top: 1.1rem;
+}
+.navbar ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #05292b;
+  font-weight: 600;
+  font-size: 1.4rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* hover-effekt */
+.navbar a:hover {
+  color: #2e896e;
+}
+
+/* underline-animation vid hover (modern look) */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2e896e;
+  transition: width 0.3s ease;
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  isolation: isolate;
+}
+
+/* #tsparticles {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
-}
+} */
 
 .hero > * {
   position: relative;
@@ -33,10 +82,14 @@ body {
   display: inline-block;
   background: #2e896e;
   padding: 0.5rem 2rem;
+  margin-top: 4rem;
   border-radius: 999px;
   color: #e4e4e4;
   font-weight: 500;
   font-size: 1.5rem;
+  line-height: 1.6;
+  min-height: 2.4rem;
+  white-space: nowrap;
 }
 
 .profile-wrapper {
@@ -51,11 +104,14 @@ body {
   width: 100%;
   display: block;
   clip-path: xywh(0 0px 100% 100% round 15% 0);
-  /* border: 3px solid #09575c; */
 }
 
 .highlight {
   color: #09575c;
+}
+
+.description {
+  padding: 2rem;
 }
 
 .buttons {
@@ -83,26 +139,9 @@ body {
   color: #0b0b22;
   border: 1px solid #0b0b22;
 }
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem 3rem;
-  background: transparent;
-}
 
-.navbar ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.navbar li {
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1.3rem;
-}
 .icons {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   gap: 1.5rem;
   justify-content: center;

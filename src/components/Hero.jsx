@@ -1,22 +1,33 @@
 import Tsparticles from "./Tsparticles";
+import TypedString from "./TypedString";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
     <section className="hero">
-      <Tsparticles />
-      <p className="welcome">Hi, I'm Jennifer👋</p>
-      <div class="profile-wrapper">
+      {/* <Tsparticles />  */}
+
+      <p className="welcome">
+        <TypedString />{" "}
+      </p>
+      <div className="profile-wrapper">
         <img id="profile-image" src="\profilephoto.png" alt="pic" />
       </div>
-      <h2>
-        An aspiring{" "}
-        <span className="highlight">Fullstack(snack ;) Developer</span>
-      </h2>
+
       <h3> *** Work in progress ***</h3>
       <p className="description">
+        <h2>
+          An aspiring <span className="highlight">Fullstack Developer</span>
+        </h2>
         My goal is to craft beautiful, functional web experiences with modern
-        technologies. I'm a YES-sayer and a DOER and passionate for problem
+        technologies. I'm a YES-sayer and a DOER with a passion for problem
         solving, creative solutions, and continuous learning.
+        <p className="cta">
+          Curious about me?{" "}
+          <Link to="/about" className="link-highlight">
+            Read more here
+          </Link>
+        </p>
       </p>
       {/* <div className="buttons">
         <button className="btn primary">View My Work</button> 

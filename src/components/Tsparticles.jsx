@@ -1,26 +1,32 @@
-import { tsParticles } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import { useCallback } from "react";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 function Tsparticles() {
-  async function startParticles() {
-    await loadSlim(tsParticles);
+  const particlesInit = useCallback(async (engine) => {
+    // Ladda in en lättare version av motorn
+    await loadSlim(engine);
+  }, []);
 
-    await tsParticles.load({
-      id: "tsparticles",
-      options: {
-        fullScreen: { enable: false }, // ❗ Viktigt
-        background: { color: "  transparent" },
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        fullScreen: { enable: false },
+        background: { color: "transparent" },
         fpsLimit: 60,
+        detectRetina: true,
         particles: {
-          number: { value: 3, max: 10 },
-          color: { value: ["#297e6bff", "#369668ff", "#6596c8ff"] },
+          number: { value: 5 },
+          color: { value: ["#297e6bff", "#369668ff"] },
           shape: { type: "circle" },
           opacity: {
             value: { min: 0.3, max: 0.9 },
-            animation: { enable: true, speed: 1.5 },
+            animation: { enable: true, speed: 1.2 },
           },
           size: {
-            value: { min: 15, max: 40 },
+            value: { min: 15, max: 150 },
             animation: { enable: true, speed: 2 },
           },
           move: {
@@ -37,11 +43,15 @@ function Tsparticles() {
           },
           modes: { bubble: { distance: 120, size: 8, duration: 1 } },
         },
-        detectRetina: true,
-      },
-    });
-  }
-
-  startParticles();
+      }}
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+      }}
+    />
+  );
 }
+
 export default Tsparticles;
