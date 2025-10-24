@@ -1,12 +1,17 @@
+import Tsparticles from "./Tsparticles";
+
 function Hero() {
   return (
     <section className="hero">
+      <Tsparticles />
       <p className="welcome">Hi, I'm Jennifer👋</p>
-      <img id="profile-image" src="\profilephoto.png" alt="pic" />
+      <div class="profile-wrapper">
+        <img id="profile-image" src="\profilephoto.png" alt="pic" />
+      </div>
       <h2>
         An aspiring <span className="highlight">Fullstack Developer</span>
       </h2>
-      <h3> *** Portfolio under construction ***</h3>
+      <h3> *** Work in progress ***</h3>
       <p className="description">
         My goal is to craft beautiful, functional web experiences with modern
         technologies. I'm a YES-sayer and a DOER and passionate for problem
