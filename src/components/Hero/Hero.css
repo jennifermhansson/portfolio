@@ -2,18 +2,22 @@
   background: #1e1e1e;
   color: #f8f8f2;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   min-height: 100vh;
 }
 
 .welcome {
-  background: #2c2d2f;
-  color: #a6e22e;
   display: inline-block;
-  padding: 0.6rem 2rem;
+  background: #2c2d2f;
+  color: #fd971f;
+  display: inline-block;
+  padding: 0.5rem 2rem;
   border-radius: 999px;
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  white-space: nowrap;
+  min-height: 2.5rem;
+  align-content: center;
 }
 
 .profile-wrapper {
@@ -31,4 +35,13 @@
 
 .highlight {
   color: #66d9ef;
+}
+
+.description {
+  max-width: 700px;
+  margin: 1.5rem auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #d3f3ee; /* passa till ditt monokai dark tema */
+  text-align: center;
 }

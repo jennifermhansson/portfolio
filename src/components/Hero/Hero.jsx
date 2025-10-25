@@ -30,17 +30,19 @@ function Hero() {
           />
         </div>
 
-        <p id="intro">
-          My portfolio is a living project - it grows, changes, and improves as
-          I do as a developer.
-        </p>
-
         <div className="description">
           <p>
-            My goal is to craft beautiful, functional web experiences with
-            modern technologies. I'm a YES-sayer and a DOER with a passion for
-            problem solving, creative solutions, and continuous learning.
+            My portfolio is a living project - it grows, changes, and improves
+            as I do as a developer.
           </p>
+          <p>
+            I created this with dedication, curiosity, and plenty of late-night
+            coding sessions. The code is written by me, supported by research,
+            tutorials, and the occasional guidance from AI. I believe in
+            learning by doing and every line of code is a step forward in
+            mastering my craft.
+          </p>
+          <p></p>
 
           <p className="cta">
             Curious about me?{" "}

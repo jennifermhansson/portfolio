@@ -1,5 +1,5 @@
 .projects {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: #2c2d2f;
   color: #f8f8f2;
 }
@@ -7,11 +7,11 @@
 .projects-header h2 {
   color: #a6e22e;
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .projects-header p {
-  color: #75715e;
+  color: #f8f8f2;
   max-width: 600px;
   margin: 0 auto 3rem;
 }
@@ -60,16 +60,26 @@
 .project-footer .links a:hover {
   color: #fd971f;
 }
+.projects-all {
+  margin-top: 4rem;
+  /* margin-bottom: 1rem; */
+  display: flex;
+  justify-content: center;
+}
 
 .projects-all a {
-  background: transparent;
-  border: 1px solid #3c3d37;
-  color: #f8f8f2;
+  background-color: transparent;
+  color: #66d9ef;
+  border: 1px solid #45c1a0;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.2s;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
+
 .projects-all a:hover {
-  background: #3c3d37;
+  border-color: #fd971f;
+  color: #fd971f;
 }

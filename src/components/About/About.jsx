@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./About.css";
-import profileFront from "../../assets/profilephoto.png";
-import profileBack from "../../assets/photojennifer_animated.png";
+import profileBack from "../../assets/profilephoto.png";
+import profileFront from "../../assets/photojennifer_animated.png";
 
 import Navbar from "../Navbar/Navbar";
 import profilephoto from "../../assets/profilephoto.png";
@@ -45,20 +45,20 @@ function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h1>Hi, I'm Jennifer 👋</h1>
+            <h1>Who is Jennifer?</h1>
             <p>
-              I'm a creative developer with a background in HR — combining
-              structure, empathy, and design thinking to build digital
-              experiences that make sense.
+              A former HR professional and Excel nerd turned aspiring full-stack
+              developer. After ten years of solving people problems, I’ve
+              shifted to solving code problems.
             </p>
             <p>
-              My focus lies in crafting clean, accessible, and interactive
-              interfaces while always learning more about the full stack behind
-              them.
+              I’m a detail-obsessed problem solver. I love figuring out how
+              things work behind the scenes and I rarely give up until I do.
             </p>
             <p>
-              Coding has become my new language for creativity — where design
-              and logic meet to build something meaningful.
+              When I’m not coding, I’m probably playing zombie games or hanging
+              out with my family — balancing family life with the occasional
+              digital apocalypse.
             </p>
           </motion.div>
         </div>
@@ -72,10 +72,11 @@ function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>🧠 What I Love</h2>
+            <h2>🧠 3 quick ones:</h2>
             <p>
-              Solving problems, designing beautiful UIs, and making web apps
-              feel alive.
+              <strong>Favourite food:</strong> Lasagna <br />
+              <strong>Listening to:</strong> Kite <br />
+              <strong>Dream destination:</strong> Japan
             </p>
           </motion.div>
 
@@ -89,7 +90,7 @@ function About() {
             <h2>⚙️ Tools & Tech</h2>
             <p>
               React, JavaScript, HTML, CSS, Node.js, Git, and a growing love for
-              UX/UI.
+              UX/UI. Backend skills coming soon!
             </p>
           </motion.div>
 
@@ -100,10 +101,10 @@ function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h2>🌿 Fun Fact</h2>
+            <h2>🎨 Fun Fact</h2>
             <p>
-              I’ve probably refactored this page three times already — and I
-              loved every second of it.
+              I used the color theme from my favourite VS code Extension
+              "Monokai Pro"
             </p>
           </motion.div>
         </div>

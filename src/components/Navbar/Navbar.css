@@ -16,13 +16,13 @@
 .navbar a {
   color: #f8f8f2;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
 }
 .navbar a:hover {
-  color: #a6e22e;
+  color: #66d9ef;
 }
 .navbar a::after {
   content: "";
@@ -31,7 +31,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background: #a6e22e;
+  background: #66d9ef;
   transition: width 0.3s ease;
 }
 .navbar a:hover::after {
