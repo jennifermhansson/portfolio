@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
+import { motion } from "framer-motion";
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -12,13 +19,12 @@ function Navbar() {
         </li>
         <li>
           <a href="/#projects">Projects</a>
-        </li>{" "}
-        {/* scrollar inom startsidan */}
+        </li>
         <li>
           <a href="#contact">Contact</a>
         </li>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 

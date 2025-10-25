@@ -1,0 +1,28 @@
+.footer {
+  background: #2c2d2f;
+  color: #f8f8f2;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #3b3b3b;
+}
+
+.footer-icons i {
+  font-size: 1.5rem;
+  color: #66d9ef;
+  margin: 0 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.footer-icons i:hover {
+  color: #a6e22e;
+  transform: translateY(-3px);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #75715e;
+  margin-top: 1rem;
+}
+.footer span {
+  color: #a6e22e;
+  font-weight: 600;
+}
