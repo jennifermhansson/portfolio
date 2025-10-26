@@ -1,11 +1,16 @@
-import TypedString from "../TypedString";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import profilephoto from "../../assets/profilephoto.png";
 import { motion } from "framer-motion";
+import TypedString from "../TypedString";
+
+import profileFront from "../../assets/profilephoto.png";
+import profileBack from "../../assets/photojennifer_animated.png";
 
 import "./Hero.css";
 
 function Hero() {
+  const [flipped, setFlipped] = useState(false);
+
   return (
     <motion.section
       className="hero"
@@ -13,7 +18,23 @@ function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <section className="hero">
+      <div className="hero-image-section">
+        <div
+          className={`flip-card ${flipped ? "flipped" : ""}`}
+          onClick={() => setFlipped(!flipped)}
+        >
+          <div className="flip-inner">
+            <div className="flip-front">
+              <img src={profileFront} alt="Jennifer Hansson" />
+            </div>
+            <div className="flip-back">
+              <img src={profileBack} alt="Animated Jennifer" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="hero-content">
         <div className="welcome">
           <TypedString />
         </div>
@@ -22,17 +43,9 @@ function Hero() {
           An aspiring <span className="highlight">Fullstack Developer</span>
         </h2>
 
-        <div className="profile-wrapper">
-          <img
-            id="profile-image"
-            src={profilephoto}
-            alt="Profile photo of Jennifer Hansson"
-          />
-        </div>
-
         <div className="description">
           <p>
-            My portfolio is a living project - it grows, changes, and improves
+            My portfolio is a living project – it grows, changes, and improves
             as I do as a developer.
           </p>
           <p>
@@ -42,16 +55,15 @@ function Hero() {
             learning by doing and every line of code is a step forward in
             mastering my craft.
           </p>
-          <p></p>
 
           <p className="cta">
             Curious about me?{" "}
             <Link to="/about" className="link-highlight">
-              Read more here
+              Read more here →
             </Link>
           </p>
         </div>
-      </section>
+      </div>
     </motion.section>
   );
 }

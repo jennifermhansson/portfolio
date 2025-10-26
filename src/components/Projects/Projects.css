@@ -1,19 +1,21 @@
 .projects {
-  padding: 2rem 2rem;
-  background: #2c2d2f;
-  color: #f8f8f2;
+  padding: 3rem 2rem;
+  background: #202020;
+  color: #e0e0e0;
+  text-align: center;
 }
 
 .projects-header h2 {
-  color: #a6e22e;
+  color: #45c1a0;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .projects-header p {
-  color: #f8f8f2;
+  color: #ccc;
   max-width: 600px;
   margin: 0 auto 3rem;
+  line-height: 1.6;
 }
 
 .projects-grid {
@@ -23,24 +25,30 @@
 }
 
 .project-card {
-  background: #1e1e1e;
+  background: #232323;
   border-radius: 1rem;
   padding: 1.5rem;
-  border: 1px solid #3c3d37;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s, border 0.3s;
+  border: 1px solid transparent;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 18px rgba(69, 193, 160, 0.25);
+  border-color: rgba(69, 193, 160, 0.4);
 }
 
 .project-header h3 {
-  color: #66d9ef;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  color: #45c1a0;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .project-footer {
@@ -49,37 +57,38 @@
   align-items: center;
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #75715e;
+  color: #888;
 }
 
 .project-footer .links a {
-  color: #a6e22e;
+  color: #45c1a0;
   margin-left: 0.5rem;
   transition: color 0.3s ease;
 }
+
 .project-footer .links a:hover {
-  color: #fd971f;
+  color: #7fffd4;
 }
+
 .projects-all {
   margin-top: 4rem;
-  /* margin-bottom: 1rem; */
   display: flex;
   justify-content: center;
 }
 
 .projects-all a {
   background-color: transparent;
-  color: #66d9ef;
+  color: #45c1a0;
   border: 1px solid #45c1a0;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
 }
 
 .projects-all a:hover {
-  border-color: #fd971f;
-  color: #fd971f;
+  color: #fff;
+  background-color: #45c1a0;
+  border-color: #45c1a0;
 }

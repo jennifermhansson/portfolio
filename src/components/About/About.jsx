@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./About.css";
-import profileBack from "../../assets/profilephoto.png";
-import profileFront from "../../assets/photojennifer_animated.png";
-
-import Navbar from "../Navbar/Navbar";
-import profilephoto from "../../assets/profilephoto.png";
 import { motion } from "framer-motion";
+import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+
+import profileFront from "../../assets/photojennifer_animated.png";
+import profileBack from "../../assets/profilephoto.png";
+
+import "./About.css";
 
 function About() {
   const [flipped, setFlipped] = useState(false);
@@ -14,21 +14,8 @@ function About() {
   return (
     <>
       <Navbar />
+
       <section className="about">
-        <div
-          className={`flip-card ${flipped ? "flipped" : ""}`}
-          onClick={() => setFlipped(!flipped)}
-        >
-          <div className="flip-inner">
-            <div className="flip-front">
-              <img src={profileFront} alt="Jennifer Hansson" />
-            </div>
-            <div className="flip-back">
-              <img src={profileBack} alt="Animated Jennifer" />
-            </div>
-          </div>
-        </div>
-        {/* Split-section */}
         <div className="about-split">
           <motion.div
             className="about-image"
@@ -36,7 +23,21 @@ function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-          ></motion.div>
+          >
+            <div
+              className={`flip-card ${flipped ? "flipped" : ""}`}
+              onClick={() => setFlipped(!flipped)}
+            >
+              <div className="flip-inner">
+                <div className="flip-front">
+                  <img src={profileFront} alt="Animated Jennifer" />
+                </div>
+                <div className="flip-back">
+                  <img src={profileBack} alt="Jennifer Hansson" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           <motion.div
             className="about-text"
@@ -63,7 +64,6 @@ function About() {
           </motion.div>
         </div>
 
-        {/* Cards Section */}
         <div className="about-cards">
           <motion.div
             className="about-card"
@@ -103,12 +103,13 @@ function About() {
           >
             <h2>🎨 Fun Fact</h2>
             <p>
-              I used the color theme from my favourite VS code Extension
-              "Monokai Pro"
+              I used the color theme from my favourite VS Code extension —
+              “Monokai Pro”
             </p>
           </motion.div>
         </div>
       </section>
+
       <Footer />
     </>
   );
