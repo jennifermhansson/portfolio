@@ -1,12 +1,17 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+
 import "./App.css";
 
 function App() {
+  const [showContact, setShowContact] = useState(false);
+
   // ---- Smooth scroll till sektion via hash-länk ----
   useEffect(() => {
     const handleHashChange = () => {
@@ -25,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar onContactClick={() => setShowContact(true)} />
       <main>
         <section id="hero">
           <Hero />
@@ -38,8 +43,9 @@ function App() {
           <About />
         </section>
       </main>
-
       <Footer />
+      <ScrollToTop />
+      {showContact && <Contact onClose={() => setShowContact(false)} />}
     </>
   );
 }

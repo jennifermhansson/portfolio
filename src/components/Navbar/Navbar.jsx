@@ -1,7 +1,12 @@
-import "./Navbar.css";
 import { motion } from "framer-motion";
+import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ onContactClick }) {
+  const handleContactClick = (e) => {
+    e.preventDefault(); // hindrar länkens standardbeteende
+    onContactClick(); // öppnar popupen
+  };
+
   return (
     <motion.nav
       className="navbar"
@@ -9,15 +14,18 @@ function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
+      <p>Jennifer's Portfolio</p>
       <ul>
-        <li>
-          <a href="#hero">Home</a>
-        </li>
         <li>
           <a href="#about">About</a>
         </li>
         <li>
           <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#contact" onClick={handleContactClick}>
+            Contact
+          </a>
         </li>
       </ul>
     </motion.nav>
