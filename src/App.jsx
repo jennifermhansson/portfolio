@@ -1,31 +1,44 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 function App() {
-  const location = useLocation();
-
+  // ---- Smooth scroll till sektion via hash-länk ----
   useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+    const handleHashChange = () => {
+      const { hash } = window.location;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [location]);
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <Projects />
+      <main>
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+      </main>
+
       <Footer />
     </>
   );

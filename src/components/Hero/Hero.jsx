@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import TypedString from "../TypedString";
 
@@ -58,9 +57,9 @@ function Hero() {
 
           <p className="cta">
             Curious about me?{" "}
-            <Link to="/about" className="link-highlight">
+            <a href="#about" className="link-highlight">
               Read more here →
-            </Link>
+            </a>
           </p>
         </div>
       </div>

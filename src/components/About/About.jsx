@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
 
 import profileFront from "../../assets/photojennifer_animated.png";
 import profileBack from "../../assets/profilephoto.png";
@@ -13,8 +11,6 @@ function About() {
 
   return (
     <>
-      <Navbar />
-
       <section className="about">
         <div className="about-split">
           <motion.div
@@ -109,8 +105,6 @@ function About() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

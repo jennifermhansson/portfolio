@@ -25,14 +25,10 @@
   }
 }
 
-.about-image {
-  flex: 1;
+.about-text {
   display: flex;
   justify-content: center;
-}
-
-.about-text {
-  flex: 1;
+  flex-direction: column;
   max-width: 500px;
   line-height: 1.6;
 }
@@ -109,11 +105,13 @@
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 18px rgba(69, 193, 160, 0.25);
+  border-color: rgba(69, 193, 160, 0.4);
 }
 
 .about-card h2 {

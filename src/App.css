@@ -9,7 +9,9 @@ body {
   margin: 0;
   text-align: center;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @keyframes monokaiFlow {
   0% {
     background-position: 0% 50%;

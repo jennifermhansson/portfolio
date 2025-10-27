@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 
@@ -12,16 +11,13 @@ function Navbar() {
     >
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <a href="#hero">Home</a>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <a href="#about">About</a>
         </li>
         <li>
-          <a href="/#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
+          <a href="#projects">Projects</a>
         </li>
       </ul>
     </motion.nav>
