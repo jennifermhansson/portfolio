@@ -35,12 +35,12 @@ function App() {
         <section id="hero">
           <Hero />
         </section>
-
-        <section id="projects">
-          <Projects />
-        </section>
         <section id="about">
           <About />
+
+          <section id="projects">
+            <Projects />
+          </section>
         </section>
       </main>
       <Footer />

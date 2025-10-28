@@ -4,8 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  min-height: 100vh;
-  padding: 2rem 1rem;
+  min-height: auto;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding: 2rem 1.2rem; /* lägger till sidomarginal även på mobil */
+
   background: #1a1a1a;
   color: #f0f0f0;
   text-align: center;
@@ -24,6 +27,8 @@
   .hero-content {
     flex: 1;
     max-width: 500px;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
   }
 }
 
@@ -70,12 +75,14 @@
 
 .welcome {
   background: #2e896e;
-  padding: 0.6rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 999px;
   color: #f0f0f0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
+  white-space: nowrap;
+  min-height: 2rem;
 }
 
 .highlight {
@@ -84,12 +91,16 @@
 
 .description {
   line-height: 1.6;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #ccc;
+  margin: 0 auto; /* centrerar blocket */
+  text-align: center;
 }
 
 .cta {
-  margin-top: 2rem;
+  margin-top: 3rem;
+
+  font-size: 1.3rem;
 }
 
 .link-highlight {
@@ -102,10 +113,4 @@
 
 .link-highlight:hover {
   border-bottom: 2px solid #45c1a0;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    padding: 3rem 4rem;
-  }
 }

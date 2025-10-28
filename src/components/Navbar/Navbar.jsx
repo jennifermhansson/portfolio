@@ -14,7 +14,6 @@ function Navbar({ onContactClick }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <p>Jennifer's Portfolio</p>
       <ul>
         <li>
           <a href="#about">About</a>

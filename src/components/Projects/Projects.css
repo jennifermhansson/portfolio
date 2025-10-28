@@ -1,6 +1,6 @@
 .projects {
   padding: 3rem 2rem;
-  background: #202020;
+  background: #1a1a1a;
   color: #e0e0e0;
   text-align: center;
 }
@@ -12,6 +12,7 @@
 }
 
 .projects-header p {
+  font-size: 1.2rem;
   color: #ccc;
   max-width: 600px;
   margin: 0 auto 3rem;

@@ -39,7 +39,7 @@ function Hero() {
         </div>
 
         <h2>
-          An aspiring <span className="highlight">Fullstack Developer</span>
+          an aspiring <span className="highlight">Fullstack Developer</span>
         </h2>
 
         <div className="description">
@@ -50,15 +50,16 @@ function Hero() {
           <p>
             I created this with dedication, curiosity, and plenty of late-night
             coding sessions. The code is written by me, supported by research,
-            tutorials, and the occasional guidance from AI. I believe in
-            learning by doing and every line of code is a step forward in
-            mastering my craft.
+            tutorials, and the occasional guidance from AI.
+          </p>{" "}
+          <p>
+            I believe in learning by doing and every line of code is a step
+            forward in mastering my craft.
           </p>
-
           <p className="cta">
-            Curious about me?{" "}
-            <a href="#about" className="link-highlight">
-              Read more here →
+            Curious about what i've done so far? Take a look at{" "}
+            <a href="#projects" className="link-highlight">
+              my projects →
             </a>
           </p>
         </div>

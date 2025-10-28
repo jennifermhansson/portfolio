@@ -1,125 +1,101 @@
 .about {
-  min-height: 100vh;
-  background: #1a1a1a;
+  background: #202020;
+  padding: 4rem 1rem;
   color: #f0f0f0;
-  padding: 2rem 1rem;
-  text-align: center;
 }
 
-.about-split {
+.about h2 {
+  color: #45c1a0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+/* Wrapper som hanterar layouten */
+.skills-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  margin-top: 1rem;
 }
 
+/* Två sektioner sida vid sida på desktop */
 @media (min-width: 900px) {
-  .about-split {
+  .skills-wrapper {
     flex-direction: row;
-    align-items: center;
-    text-align: center;
-    gap: 0rem;
-    padding: 2rem 4rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .skills-section {
+    flex: 0 0 45%; /* <– gör varje sektion 45% av tillgänglig bredd */
+    max-width: 500px; /* <– begränsar så de inte blir för breda */
   }
 }
 
-.about-text {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 500px;
-  line-height: 1.6;
-}
-
-.about-text h1 {
-  color: #45c1a0;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-}
-
-.about-text p {
-  color: #ccc;
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-}
-
-.flip-card {
-  perspective: 1000px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.flip-inner {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  transform-style: preserve-3d;
-  transition: transform 0.8s;
-}
-
-.flipped .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15% 0;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-}
-
-.flip-front img,
-.flip-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.flip-back {
-  transform: rotateY(180deg);
-}
-
-.about-cards {
-  display: grid;
-  gap: 2rem;
-  padding: 0 1rem 4rem;
-}
-
-@media (min-width: 768px) {
-  .about-cards {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-}
-
-.about-card {
-  background: #232323;
+/* Varje sektion */
+.skills-section {
+  background: #1e1e1e;
+  border: 1px solid #3b3b3b;
   border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid transparent;
+  padding: 2rem;
+  text-align: center;
+  width: 90%;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(69, 193, 160, 0.25);
-  border-color: rgba(69, 193, 160, 0.4);
+.skills-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(69, 193, 160, 0.2);
 }
 
-.about-card h2 {
+.skills-section h2 {
   color: #45c1a0;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
+  border-bottom: 1px solid #3b3b3b;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
-.about-card p {
-  color: #e0e0e0;
-  font-size: 1rem;
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* Skill-taggar */
+.skill-tag {
+  background: #2c2d2f;
+  color: #f8f8f2;
+  border: 1px solid #3b3b3b;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  border: 1px solid #45c1a0;
+}
+
+/* Responsivt */
+@media (max-width: 600px) {
+  .skills-section {
+    width: 90%;
+  }
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
 }

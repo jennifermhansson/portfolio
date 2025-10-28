@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #45c1a0; /* din gröna accent */
+  background: #2e896e; /* din gröna accent */
   color: #1a1a1a;
   border: none;
   border-radius: 50%;
@@ -17,7 +17,7 @@
 }
 
 .scroll-top-btn:hover {
-  background: #a6e22e;
+  background: #f8f8f2;
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
