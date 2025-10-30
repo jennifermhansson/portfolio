@@ -6,7 +6,8 @@ function TypedString() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Hi, I'm Jennifer👋"],
+      strings: ["Jennifer Hansson"],
+
       typeSpeed: 100,
       backSpeed: 80,
       loop: true,

@@ -43,7 +43,7 @@ function App() {
           </section>
         </section>
       </main>
-      <Footer />
+      <Footer onContactClick={() => setShowContact(true)} />
       <ScrollToTop />
       {showContact && <Contact onClose={() => setShowContact(false)} />}
     </>

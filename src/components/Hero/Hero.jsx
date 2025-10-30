@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import TypedString from "../TypedString";
 
 import profileFront from "../../assets/profilephoto.png";
 import profileBack from "../../assets/photojennifer_animated.png";
@@ -17,6 +16,19 @@ function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
+      {/* 💫 Animated background blobs */}
+      <motion.div
+        className="blur-blob blob1"
+        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="blur-blob blob2"
+        animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* 💡 Hero content starts here */}
       <div className="hero-image-section">
         <div
           className={`flip-card ${flipped ? "flipped" : ""}`}
@@ -35,7 +47,7 @@ function Hero() {
 
       <div className="hero-content">
         <div className="welcome">
-          <TypedString />
+          Portfolio of <br /> Jennifer Hansson
         </div>
 
         <h2>
@@ -48,18 +60,15 @@ function Hero() {
             as I do as a developer.
           </p>
           <p>
-            I created this with dedication, curiosity, and plenty of late-night
-            coding sessions. The code is written by me, supported by research,
-            tutorials, and the occasional guidance from AI.
-          </p>{" "}
-          <p>
-            I believe in learning by doing and every line of code is a step
-            forward in mastering my craft.
+            I created this with dedication, curiosity, and plenty of late night
+            coding sessions.
           </p>
+
           <p className="cta">
-            Curious about what i've done so far? Take a look at{" "}
-            <a href="#projects" className="link-highlight">
-              my projects →
+            Curious about what I’ve done so far? Take a look at{" "}
+            <a href="#about" className="link-highlight">
+              <br /> my journey
+              <br /> ↓
             </a>
           </p>
         </div>

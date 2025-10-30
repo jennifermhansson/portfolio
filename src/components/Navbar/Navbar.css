@@ -6,7 +6,7 @@
 
 .navbar ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 3rem;
   list-style: none;
   margin: 0;
@@ -16,7 +16,7 @@
 .navbar a {
   color: #f8f8f2;
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.1rem;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;

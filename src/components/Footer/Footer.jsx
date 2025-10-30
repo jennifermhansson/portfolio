@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "./Footer.css";
 
-function Footer() {
+function Footer({ onContactClick }) {
   return (
     <motion.footer
       className="footer"
@@ -15,14 +15,16 @@ function Footer() {
           <a href="https://github.com/jennifermhansson" target="_blank">
             <i className="fa-brands fa-github"></i>
           </a>
+
+          <button className="footer-btn" onClick={onContactClick}>
+            <i className="fa-solid fa-envelope"></i>
+          </button>
+
           <a
             href="https://www.linkedin.com/in/jennifer-hansson-aa19b0a3/"
             target="_blank"
           >
             <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="mailto:jennifermhansson@gmail.com">
-            <i className="fa-solid fa-envelope"></i>
           </a>
         </div>
         <p className="footer-copy">

@@ -17,7 +17,7 @@ function Contact({ onClose }) {
         { publicKey: "py8_xDhI9QA2xq1UF" }
       );
       setSuccess(true);
-      setTimeout(() => onClose(), 3000); // Stäng popup efter 2 sekunder
+      setTimeout(() => onClose(), 3500); // Stäng popup efter 2 sekunder
     } catch (error) {
       console.log("FAILED...", error.text);
     }
@@ -31,6 +31,10 @@ function Contact({ onClose }) {
         ) : (
           <>
             <h2>Contact Me</h2>
+            <p>
+              Have a question or want to get in touch? Fill out the form below
+              and I'll get back to you as soon as possible.
+            </p>
             <form ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" required />

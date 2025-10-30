@@ -22,7 +22,7 @@ function Projects() {
       {
         id: 2,
         name: "Portfolio",
-        description: "My portfolio built with React and Vite.",
+        description: "My portfolio built with React & Javascript",
         html_url: "https://github.com/jennifermhansson/portfolio",
         homepage: "https://jennifermhansson.github.io/portfolio/",
         stargazers_count: 0,
@@ -32,7 +32,7 @@ function Projects() {
       {
         id: 3,
         name: "Bean Button",
-        description: "Upcoming app for coffee lovers",
+        description: "App for coffee lovers *work in progress*",
         html_url: "https://github.com/jennifermhansson/beanbutton",
         homepage: "",
         stargazers_count: 0,
@@ -74,10 +74,16 @@ function Projects() {
         >
           <h2>Featured Projects</h2>
           <p id="my-projects">
-            Here are a few of my projects, both school work and private open
-            source projects.
+            I believe in learning by doing and every line of code is a step
+            forward in mastering my craft. Here are a few of my projects, both
+            school work and private open source projects.
           </p>
         </motion.div>
+        <motion.div
+          className="blur-blob blob4"
+          animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
 
         <div className="projects-grid">
           {loading ? (
@@ -129,7 +135,7 @@ function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            <Github size={20} /> View All on GitHub
+            <Github size={20} /> View my GitHub page
           </a>
         </div>
       </section>

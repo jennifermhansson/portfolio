@@ -1,5 +1,5 @@
 .footer {
-  background: #2c2d2f;
+  background: #242526;
   color: #f8f8f2;
   text-align: center;
   padding: 2rem 1rem;
@@ -25,4 +25,18 @@
 .footer span {
   color: #a6e22e;
   font-weight: 600;
+}
+.footer-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #66d9ef;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-btn:hover {
+  color: #a6e22e;
+  transform: translateY(-3px);
 }

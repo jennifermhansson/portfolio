@@ -1,53 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
+html,
+body,
+#root {
+  background-color: #1a1a1a;
+}
 body {
   font-family: "Quicksand", monospace;
-  background: linear-gradient(130deg, #1e1e1e, #242526, #1e1e1e);
-  background-size: 300% 300%;
-  animation: monokaiFlow 12s ease infinite;
-  color: #f8f8f2;
+  color: #1a1a1a;
   margin: 0;
   text-align: center;
 }
+
 html {
   scroll-behavior: smooth;
-}
-@keyframes monokaiFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.link-highlight {
-  color: #fd971f;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-.link-highlight:hover {
-  border-bottom: 2px solid #fd971f;
-}
-
-.icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.icons i {
-  font-size: 1.5rem;
-  color: #66d9ef;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-.icons i:hover {
-  color: #a6e22e;
-  transform: translateY(-3px);
 }
