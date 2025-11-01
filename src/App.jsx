@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
-import Contact from "./components/Contact/Contact";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-
+import Contact from "./components/Contact/Contact";
 import "./App.css";
+
+// ✅ Lazy-load stora sektioner
+const About = lazy(() => import("./components/About/About"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
 
 function App() {
   const [showContact, setShowContact] = useState(false);
 
-  // ---- Smooth scroll till sektion via hash-länk ----
+  // ✅ Smooth scroll for #links
   useEffect(() => {
     const handleHashChange = () => {
       const { hash } = window.location;
@@ -31,20 +32,30 @@ function App() {
   return (
     <>
       <Navbar onContactClick={() => setShowContact(true)} />
+
       <main>
         <section id="hero">
           <Hero />
         </section>
-        <section id="about">
-          <About />
+
+        <Suspense
+          fallback={
+            <p style={{ color: "#fff", textAlign: "center" }}>Loading...</p>
+          }
+        >
+          <section id="about">
+            <About />
+          </section>
 
           <section id="projects">
             <Projects />
           </section>
-        </section>
+        </Suspense>
       </main>
+
       <Footer onContactClick={() => setShowContact(true)} />
       <ScrollToTop />
+
       {showContact && <Contact onClose={() => setShowContact(false)} />}
     </>
   );

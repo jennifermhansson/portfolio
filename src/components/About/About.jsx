@@ -32,38 +32,39 @@ function About() {
 
   return (
     <section className="about-section" id="about">
-      <motion.div
-        className="blur-blob blob3"
-        animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <h2>My Journey</h2>
+      <div className="about-wrapper">
+        {/* ✅ Vänster text */}
+        <div className="about-text">
+          <h2>My Journey</h2>
+          <p>
+            When I'm not crafting code, you'll find me playing hide & seek with
+            my kids, spending time at the gym (hiding from the kids😉) or
+            playing zombie games preparing for a digital apocalypse.
+          </p>
+          <p>
+            I’m currently studying Fullstack Development Open Source and I’m
+            eager to explore the backend and understand the full architecture
+            that powers modern web applications.
+          </p>
+        </div>
 
-      <p className="about-intro">
-        When I'm not crafting code, you'll find me playing hide & seek with my
-        kids, spending time at the gym (hiding from the kids😉) or playing
-        zombie games preparing for a digital apocalypse.
-        <br />
-        <br /> I’m currently studying Fullstack Development Open Source and I’m
-        eager to explore the backend and understand the full architecture that
-        powers modern web applications
-      </p>
-
-      <div className="skills-grid">
-        {skills.map((skill, i) => (
-          <motion.div
-            className="skill-card"
-            key={i}
-            whileHover={{ scale: 1.04 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <div className={`skill-icon ${skill.color}`}>{skill.icon}</div>
-            <div className="skill-text">
-              <h3>{skill.title}</h3>
-              <p>{skill.desc}</p>
-            </div>
-          </motion.div>
-        ))}
+        {/* ✅ Höger – skills grid */}
+        <div className="skills-grid">
+          {skills.map((skill, i) => (
+            <motion.div
+              className="skill-card"
+              key={i}
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              <div className={`skill-icon ${skill.color}`}>{skill.icon}</div>
+              <div className="skill-text">
+                <h3>{skill.title}</h3>
+                <p>{skill.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

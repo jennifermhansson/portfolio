@@ -1,62 +1,98 @@
 .about-section {
-  position: relative; /* viktigt */
-
   padding: 5rem 2rem;
-  background: #202020;
+  background: #1a1a1a;
   color: #f8f8f2;
-  text-align: center;
 }
 
 .about-section h2 {
-  color: #a3f5df;
+  color: #45c1a0;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  text-align: center;
+}
+/* Wrapper för att dela upp layout */
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.about-intro {
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
-  font-size: 1.1rem;
-  color: #ccc;
-  line-height: 1.7;
-}
-
-/* Grid layout */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 800px) {
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+@media (min-width: 900px) {
+  .about-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4rem;
+    padding: 5rem;
   }
 }
 
-/* Each card */
+/* ✅ Vänster text */
+.about-text {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .about-text {
+    text-align: center;
+  }
+}
+
+.about-text h2 {
+  color: #45c1a0;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+/* ✅ Höger – skills-kort */
+.skills-grid {
+  flex: 1;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Skill Card ===== */
 .skill-card {
   background: #232323;
   border: 1px solid #333;
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1.8rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  max-height: 100px;
+  min-height: 75px;
 }
-
+@media (min-width: 900px) {
+  .skill-card {
+    min-height: 90px;
+    max-width: 300px;
+  }
+}
 .skill-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(69, 193, 160, 0.2);
+  transform: translateY(-4px);
+  border-color: #45c1a0;
+  box-shadow: 0 6px 25px rgba(69, 193, 160, 0.15);
 }
 
-/* Icons */
+/* ===== Ikoner ===== */
 .skill-icon {
   flex-shrink: 0;
   background: #2c2d2f;
@@ -67,7 +103,7 @@
   justify-content: center;
 }
 
-/* Accent colors for icons */
+/* Färg på ikoner */
 .cyan svg {
   color: #66d9ef;
 }
@@ -81,36 +117,21 @@
   color: #f92672;
 }
 
-/* Text */
+/* ===== Text i korten ===== */
 .skill-text h3 {
+  font-size: 1.2rem;
   color: #f8f8f2;
   margin-bottom: 0.3rem;
-  font-size: 1.1rem;
 }
 
 .skill-text p {
-  color: #a9a9a9;
   font-size: 0.95rem;
-  line-height: 1.4;
+  color: #a9a9a9;
+  line-height: 1.5;
 }
 
-.blur-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  z-index: 0;
-}
-.blob3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(47, 145, 164, 0.4), transparent 70%);
-  top: 15%;
-  right: 20%;
-}
-
-/* Se till att allt innehåll ligger ovanpå */
-.about > *:not(.blur-blob) {
+/* Se till att allt innehåll ligger ovanpå blob */
+.about-section > *:not(.blur-blob) {
   position: relative;
   z-index: 1;
 }

@@ -1,81 +1,22 @@
+/* ===== HERO SECTION – Mobile First ===== */
+
 .hero {
+  min-height: 100vh;
+  padding: 1.5rem 3rem; /* Extra padding-top för fixed navbar */
+  background: rgb(32, 32, 32);
+  color: #f8f8f2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  min-height: auto;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
-  padding: 2rem 1.2rem; /* lägger till sidomarginal även på mobil */
-
-  background: #1a1a1a;
-  color: #f0f0f0;
+  gap: 2.5rem;
   text-align: center;
 }
-/* --- Animated Background Blobs --- */
-.blur-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  z-index: 0;
-}
 
-/* Blob 1 – Monokai green tone */
-.blob1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(14, 179, 135, 0.747),
-    transparent 100%
-  );
-  top: 30%;
-  left: 20%;
-}
-
-/* Blob 2 – cyan/blue tone */
-.blob2 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(
-    circle,
-    rgba(47, 145, 164, 0.4),
-    transparent 100%
-  );
-  bottom: 15%;
-  right: 20%;
-}
-
-/* Se till att allt innehåll ligger ovanpå */
-.hero > *:not(.blur-blob) {
-  position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 900px) {
-  .hero {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 0rem;
-  }
-
-  .hero-image-section,
-  .hero-content {
-    flex: 1;
-    max-width: 500px;
-    margin-bottom: 2.5rem;
-    margin-top: 2.5rem;
-  }
-}
-
+/* Flip Card */
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .flip-inner {
@@ -113,12 +54,18 @@
   transform: rotateY(180deg);
 }
 
-.welcome {
-  display: flex;
-  justify-content: center;
-  color: #f0f0f0;
-  font-size: 2.8rem;
-  margin-bottom: 1.6rem;
+#hello {
+  margin-bottom: 2rem;
+}
+/* Text & Description */
+.hero-content {
+  max-width: 500px;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 .highlight {
@@ -126,26 +73,59 @@
 }
 
 .description {
+  font-size: 1.05rem;
   line-height: 1.6;
-  font-size: 1.1rem;
   color: #ccc;
-  margin: 0 auto; /* centrerar blocket */
-  text-align: center;
 }
 
 .cta {
-  margin-top: 3rem;
-
-  font-size: 1.1rem;
+  margin-top: 2rem;
 }
 
 .link-highlight {
-  color: #fd971f;
+  color: #45c1a0;
   font-weight: 600;
-  text-decoration: none;
   border-bottom: 2px solid transparent;
+  text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 1.5rem;
 }
+
 .link-highlight:hover {
-  border-bottom: 2px solid #fd971f;
+  border-bottom: 2px solid #45c1a0;
+}
+
+#arrow {
+  color: #45c1a0;
+  font-size: 2rem;
+}
+
+/* ===== Desktop Layout: Split image + text ===== */
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 5rem; /* ännu mindre för stora skärmar */
+    min-height: 60vh;
+  }
+}
+
+.hero-image-section,
+.hero-content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+/* ===== Prevent text from touching screen edges on small screens ===== */
+@media (max-width: 400px) {
+  .description {
+    padding: 0 0.5rem;
+  }
 }

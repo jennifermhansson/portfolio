@@ -12,17 +12,26 @@ function Footer({ onContactClick }) {
     >
       <div className="footer-content">
         <div className="footer-icons">
-          <a href="https://github.com/jennifermhansson" target="_blank">
+          <a
+            href="https://github.com/jennifermhansson"
+            target="_blank"
+            aria-label="Visit my GitHub"
+          >
             <i className="fa-brands fa-github"></i>
           </a>
 
-          <button className="footer-btn" onClick={onContactClick}>
+          <button
+            className="footer-btn"
+            onClick={onContactClick}
+            aria-label="Open contact form"
+          >
             <i className="fa-solid fa-envelope"></i>
           </button>
 
           <a
             href="https://www.linkedin.com/in/jennifer-hansson-aa19b0a3/"
             target="_blank"
+            aria-label="Visit my LinkedIn"
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>

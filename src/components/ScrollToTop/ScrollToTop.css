@@ -1,34 +1,45 @@
+/* Scroll to top button */
 .scroll-top-btn {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: #2e896e; /* din gröna accent */
-  color: #1a1a1a;
-  border: none;
+  bottom: 2.2rem;
+  right: 2.2rem;
+  background: #2c2d2f;
+  color: #45c1a0;
+  border: 1px solid #3c3d37;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
   z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
+/* When visible = true */
+.scroll-top-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover effect */
 .scroll-top-btn:hover {
-  background: #f8f8f2;
+  background: #45c1a0;
+  color: #1a1a1a;
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* Mobilanpassning */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .scroll-top-btn {
-    bottom: 1.5rem;
-    right: 1.5rem;
     width: 40px;
     height: 40px;
-    font-size: 1.3rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.1rem;
   }
 }

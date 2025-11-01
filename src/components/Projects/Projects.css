@@ -1,21 +1,30 @@
+/* ==== Sektion wrapper ==== */
 .projects {
-  padding: 3rem 2rem;
-  background: #1a1a1a;
-  color: #e0e0e0;
+  padding: 6rem 2rem;
+  background: rgb(32, 32, 32);
+  color: #f8f8f2;
   text-align: center;
+  position: relative;
+  overflow: hidden; /* viktigt för blob */
 }
+/* 
+.projects:first-of-type {
+  margin-top: 0;
+} */
 
+/* ==== Header text ==== */
 .projects-header h2 {
-  color: #a3f5df;
   font-size: 2rem;
+  color: #45c1a0;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.projects-header p {
-  font-size: 1.1rem;
+#my-projects {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
   color: #ccc;
-  max-width: 600px;
-  margin: 0 auto 3rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -25,6 +34,22 @@
   gap: 2rem;
 }
 
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; /* 🔹 Lite mindre avstånd */
+    max-width: 1400px; /* ✅ Gör bredare sektion */
+    margin: 0 auto;
+  }
+
+  .project-card {
+    width: 100%; /* ✅ Fyll ut sin grid-cell */
+    max-width: 350px; /* ✅ Gör kortet större */
+    max-height: 230px; /* ✅ Samma höjd */
+    padding: 1.8rem;
+  }
+}
+/* ==== Project card ==== */
 .project-card {
   background: #1e1e1e;
   border: 1px solid #3b3b3b;
@@ -34,87 +59,107 @@
   width: 90%;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 140px;
 }
 
 .project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(69, 193, 160, 0.2);
+  transform: translateY(-5px);
+  border-color: #45c1a0;
+  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
+}
+
+/* Header inside card */
+.project-header {
+  min-height: 48px; /* 🔹 Titel + badge tar alltid samma plats */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
 }
 
 .project-header h3 {
-  color: #a3f5df;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.project-header span {
+  background: #2c2d2f;
+  color: #45c1a0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
 }
 
 .project-card p {
-  color: #ccc;
-  line-height: 1.5;
-  font-size: 1rem;
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  text-align: center;
+  align-content: center;
 }
 
+/* ==== Footer in card (links and stats) ==== */
 .project-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #888;
+  margin-top: auto;
 }
 
-.project-footer .links a {
+/* Stars and forks */
+.stats {
+  display: flex;
+  gap: 1rem;
+  color: #a6a6a6;
+  font-size: 0.9rem;
+}
+
+.stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Links (GitHub, Live Demo) */
+.links a {
   color: #45c1a0;
-  margin-left: 0.5rem;
+  margin-left: 0.6rem;
   transition: color 0.3s ease;
 }
 
-.project-footer .links a:hover {
-  color: #7fffd4;
+.links a:hover {
+  color: #a6e22e;
 }
 
+/* ==== "View More" button ==== */
 .projects-all {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
+  margin-top: 3rem;
 }
 
 .projects-all a {
-  background-color: transparent;
-  color: #a3f5df;
-  border: 1px solid #a3f5df;
-  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #45c1a0;
+  border: 1px solid #45c1a0;
+  padding: 0.7rem 1.5rem;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .projects-all a:hover {
-  color: #45c1a0;
-  /* background-color: #45c1a0; */
-  border-color: #45c1a0;
-}
-.blur-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  z-index: 0;
-}
-.blob4 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(
-    circle,
-    rgba(47, 145, 164, 0.4),
-    transparent 100%
-  );
-  top: 15%;
-  left: 20%;
+  background: #45c1a0;
+  color: #1a1a1a;
 }
 
-/* Se till att allt innehåll ligger ovanpå */
 .projects > *:not(.blur-blob) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }

@@ -1,39 +1,68 @@
+/* ===== Navbar – Mobile first ===== */
 .navbar {
-  background: #242526;
-  border-bottom: 1px solid #3b3b3b;
-  padding: 1.5rem 2rem;
+  width: 100%;
+  background: rgb(32, 32, 32);
+  border-bottom: 1px solid #2e2e2e;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* alltid synlig överst */
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .navbar ul {
-  display: flex;
-  justify-content: flex-end;
-  gap: 3rem;
   list-style: none;
+  display: flex;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
 .navbar a {
   color: #f8f8f2;
-  font-weight: 600;
   font-size: 1.1rem;
+  font-weight: 500;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
 }
+
+/* Hover-effekt */
 .navbar a:hover {
   color: #66d9ef;
 }
+
+/* Underline-animation */
 .navbar a::after {
   content: "";
   position: absolute;
-  bottom: -4px;
   left: 0;
+  bottom: -4px;
   width: 0%;
   height: 2px;
-  background: #66d9ef;
+  background-color: #66d9ef;
   transition: width 0.3s ease;
 }
+
 .navbar a:hover::after {
   width: 100%;
+}
+
+/* ===== Desktop (≥768px) ===== */
+@media (min-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 2rem 3rem;
+  }
+
+  .navbar ul {
+    gap: 3rem;
+  }
+
+  .navbar a {
+    font-size: 1.2rem;
+  }
 }
