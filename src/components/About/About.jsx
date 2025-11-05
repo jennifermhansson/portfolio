@@ -6,7 +6,7 @@ import "./About.css";
 function About() {
   const [skill, setSkill] = useState([]);
   const [loading, setLoading] = useState(false);
-  const hasLoaded = useRef(false); // Ser till att vi inte hämtar flera gånger
+  const hasLoaded = useRef(false);
   const sectionRef = useRef(null);
 
   const skills = [
@@ -44,7 +44,6 @@ function About() {
           hasLoaded.current = true;
           setLoading(true);
 
-          // Fake fetch delay för att simulera data-hämtning
           setTimeout(() => {
             setSkill(skills);
             setLoading(false);
@@ -77,7 +76,6 @@ function About() {
           </p>
         </div>
 
-        {/* ✅ Höger – skills grid */}
         <div className="skills-grid">
           {loading ? (
             <p style={{ textAlign: "center", color: "#45c1a0" }}>

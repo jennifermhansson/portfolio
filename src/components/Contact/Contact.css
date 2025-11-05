@@ -1,12 +1,10 @@
-/* Labels */
 label {
   font-weight: 600;
-  color: #45c1a0; /* Monokai limegrön */
+  color: #45c1a0;
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   form {
     padding: 2rem 1.2rem;
@@ -27,7 +25,6 @@ label {
   transform: translateY(-2px);
 }
 
-/* 🪩 Popup overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -38,7 +35,6 @@ label {
   z-index: 999;
 }
 
-/* Popup-fönstret */
 .modal-content {
   background: #232323;
   color: #f8f8f2;
@@ -52,12 +48,11 @@ label {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centrerar vertikalt inom popupen */
-  align-items: center; /* centrerar horisontellt */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-/* Gör formens innehåll centrerat */
 .modal-content form {
   width: 100%;
   display: flex;
@@ -65,10 +60,9 @@ label {
   align-items: center;
 }
 
-/* Inputfält */
 .modal-content input,
 .modal-content textarea {
-  width: 70%; /* centrerar lite snyggare än 100% */
+  width: 70%;
   background: #1e1e1e;
   color: #f8f8f2;
   border: 1px solid #3b3b3b;
@@ -76,7 +70,7 @@ label {
   padding: 0.8rem;
   margin-bottom: 1rem;
   transition: border-color 0.3s ease;
-  text-align: left; /* håller texten vänsterställd */
+  text-align: left;
 }
 
 .modal-content input:focus,
@@ -85,18 +79,17 @@ label {
   outline: none;
 }
 
-/* Centrerar knapparna ordentligt */
 .modal-buttons {
   width: 100%;
   display: flex;
-  justify-content: center; /* centrera hela gruppen */
-  gap: 1rem; /* mellanrum mellan knapparna */
+  justify-content: center;
+  gap: 1rem;
   margin-top: 1.5rem;
 }
 
 .modal-buttons input[type="submit"],
 .modal-buttons button {
-  max-width: 120px; /* samma bredd */
+  max-width: 120px;
   max-height: 40px;
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
@@ -122,7 +115,6 @@ label {
   border-color: #45c1a0;
 }
 
-/* Fade animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

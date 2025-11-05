@@ -1,18 +1,12 @@
-/* ==== Sektion wrapper ==== */
 .projects {
   padding: 6rem 2rem;
   background: rgb(32, 32, 32, 0.5);
   color: #f8f8f2;
   text-align: center;
   position: relative;
-  overflow: hidden; /* viktigt för blob */
+  overflow: hidden;
 }
-/* 
-.projects:first-of-type {
-  margin-top: 0;
-} */
 
-/* ==== Header text ==== */
 .projects-header h2 {
   font-size: 2rem;
   color: #45c1a0;
@@ -37,19 +31,19 @@
 @media (min-width: 900px) {
   .projects-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem; /* 🔹 Lite mindre avstånd */
-    max-width: 1400px; /* ✅ Gör bredare sektion */
+    gap: 1.5rem;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
   .project-card {
-    width: 100%; /* ✅ Fyll ut sin grid-cell */
-    max-width: 350px; /* ✅ Gör kortet större */
-    max-height: 230px; /* ✅ Samma höjd */
+    width: 100%;
+    max-width: 350px;
+    max-height: 230px;
     padding: 1.8rem;
   }
 }
-/* ==== Project card ==== */
+
 .project-card {
   background: #1e1e1e;
   border: 1px solid #3b3b3b;
@@ -68,9 +62,8 @@
   box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
 }
 
-/* Header inside card */
 .project-header {
-  min-height: 48px; /* 🔹 Titel + badge tar alltid samma plats */
+  min-height: 48px;
 
   display: flex;
   justify-content: space-between;
@@ -105,7 +98,6 @@
   align-content: center;
 }
 
-/* ==== Footer in card (links and stats) ==== */
 .project-footer {
   display: flex;
   justify-content: space-between;
@@ -113,7 +105,6 @@
   margin-top: auto;
 }
 
-/* Stars and forks */
 .stats {
   display: flex;
   gap: 1rem;
@@ -127,7 +118,6 @@
   gap: 0.3rem;
 }
 
-/* Links (GitHub, Live Demo) */
 .links a {
   color: #45c1a0;
   margin-left: 0.6rem;
@@ -138,7 +128,6 @@
   color: #a6e22e;
 }
 
-/* ==== "View More" button ==== */
 .projects-all {
   margin-top: 3rem;
 }

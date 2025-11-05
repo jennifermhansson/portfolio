@@ -16,7 +16,6 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* 💡 Hero content starts here */}
         <div className="hero-image-section">
           <div
             className={`flip-card ${flipped ? "flipped" : ""}`}
@@ -60,14 +59,21 @@ function Hero() {
               I created this with dedication, curiosity, and plenty of late
               night coding sessions.
             </p>
-
             <p className="cta">
-              Curious about what I’ve done so far? Learn more{" "}
-              <a href="#about" className="link-highlight">
-                <br /> about me
-              </a>
-            </p>
-            <p id="arrow">↓</p>
+              Curious about what I’ve done so far? Read more about me!
+            </p>{" "}
+            <br />
+            <a href="#about" className="svg-arrow">
+              <svg width="40" height="40" viewBox="0 0 24 24">
+                <path
+                  d="M12 5v14M5 12l7 7 7-7"
+                  stroke="#45c1a0"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </motion.section>

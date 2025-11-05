@@ -3,8 +3,8 @@ import "./Navbar.css";
 
 function Navbar({ onContactClick }) {
   const handleContactClick = (e) => {
-    e.preventDefault(); // hindrar länkens standardbeteende
-    onContactClick(); // öppnar popupen
+    e.preventDefault();
+    onContactClick();
   };
 
   return (

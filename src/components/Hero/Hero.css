@@ -1,8 +1,6 @@
-/* ===== HERO SECTION – Mobile First ===== */
-
 .hero {
   min-height: 100vh;
-  padding: 4rem 3rem; /* Extra padding-top för fixed navbar */
+  padding: 4rem 3rem;
   background: rgba(32, 32, 32, 0.5);
   color: #f8f8f2;
   display: flex;
@@ -13,7 +11,6 @@
   text-align: center;
 }
 
-/* Flip Card */
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
@@ -40,7 +37,7 @@
   backface-visibility: hidden;
   border-radius: 15% 0;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: rgba(72, 202, 174, 0.223) 0 0 100px 1px;
 }
 
 .flip-front img,
@@ -58,7 +55,7 @@
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
-/* Text & Description */
+
 .hero-content {
   max-width: 500px;
 }
@@ -96,12 +93,22 @@
   border-bottom: 2px solid #45c1a0;
 }
 
-#arrow {
-  color: #45c1a0;
-  font-size: 2rem;
+.svg-arrow {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
 }
 
-/* ===== Desktop Layout: Split image + text ===== */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
 @media (min-width: 900px) {
   .hero {
     flex-direction: row;
@@ -109,7 +116,7 @@
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    padding: 5rem 5rem; /* ännu mindre för stora skärmar */
+    padding: 5rem 5rem;
     min-height: 60vh;
   }
 }
@@ -124,7 +131,6 @@
   text-align: center;
 }
 
-/* ===== Prevent text from touching screen edges on small screens ===== */
 @media (max-width: 400px) {
   .description {
     padding: 0 0.5rem;

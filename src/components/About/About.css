@@ -134,9 +134,3 @@ html {
   color: #a9a9a9;
   line-height: 1.5;
 }
-
-/* Se till att allt innehåll ligger ovanpå blob */
-.about-section > *:not(.blur-blob) {
-  position: relative;
-  z-index: 1;
-}

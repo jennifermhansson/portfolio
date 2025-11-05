@@ -7,14 +7,12 @@ import Contact from "./components/Contact/Contact";
 import "./App.css";
 import BackgroundParticles from "./components/BackgroundParticles";
 
-// ✅ Lazy-load stora sektioner
 const About = lazy(() => import("./components/About/About"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
 
 function App() {
   const [showContact, setShowContact] = useState(false);
 
-  // ✅ Smooth scroll for #links
   useEffect(() => {
     const handleHashChange = () => {
       const { hash } = window.location;
