@@ -62,9 +62,9 @@ function Hero() {
           </p>
 
           <p className="cta">
-            Curious about what I’ve done so far? Take a look at{" "}
+            Curious about what I’ve done so far? Learn more{" "}
             <a href="#about" className="link-highlight">
-              <br /> my journey
+              <br /> about me
             </a>
           </p>
           <p id="arrow">↓</p>
