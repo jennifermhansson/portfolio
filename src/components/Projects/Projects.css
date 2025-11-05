@@ -1,7 +1,7 @@
 /* ==== Sektion wrapper ==== */
 .projects {
   padding: 6rem 2rem;
-  background: rgb(32, 32, 32);
+  background: rgb(32, 32, 32, 0.5);
   color: #f8f8f2;
   text-align: center;
   position: relative;
