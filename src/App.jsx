@@ -31,6 +31,7 @@ function App() {
   return (
     <>
       <BackgroundParticles />
+
       <Navbar onContactClick={() => setShowContact(true)} />
 
       <main>

@@ -1,13 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
-
-main,
-header,
-footer,
-section,
-#root {
-  position: relative;
-  z-index: 1;
-}
+/* ✅ Importera font */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
   --bg-dark: #1a1a1a;
@@ -35,7 +27,7 @@ body,
 }
 
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: "Inconsolata", sans-serif;
   color: var(--text-light);
   overflow-x: hidden;
 }

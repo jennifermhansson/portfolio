@@ -1,6 +1,6 @@
 .hero {
   min-height: 100vh;
-  padding: 4rem 3rem;
+  padding: 6rem 3rem;
   background: rgba(32, 32, 32, 0.5);
   color: #f8f8f2;
   display: flex;
@@ -9,6 +9,8 @@
   justify-content: center;
   gap: 4rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .flip-card {
@@ -52,7 +54,7 @@
 }
 
 #hello {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
 }
 

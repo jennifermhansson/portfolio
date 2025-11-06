@@ -100,7 +100,7 @@ html {
 /* ===== Ikoner ===== */
 .skill-icon {
   flex-shrink: 0;
-  background: #2c2d2f;
+  /* background: #2c2d2f; */
   border-radius: 10px;
   padding: 0.7rem;
   display: flex;
