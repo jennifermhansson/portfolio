@@ -17,7 +17,7 @@ function Contact({ onClose }) {
         { publicKey: "py8_xDhI9QA2xq1UF" }
       );
       setSuccess(true);
-      setTimeout(() => onClose(), 3500); // Stäng popup efter 2 sekunder
+      setTimeout(() => onClose(), 3500);
     } catch (error) {
       console.log("FAILED...", error.text);
     }

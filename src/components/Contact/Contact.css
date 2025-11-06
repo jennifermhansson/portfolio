@@ -1,12 +1,10 @@
-/* Labels */
 label {
   font-weight: 600;
-  color: #45c1a0; /* Monokai limegrön */
+  color: #45c1a0;
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   form {
     padding: 2rem 1.2rem;
@@ -67,7 +65,6 @@ label {
   align-items: center;
 }
 
-/* Inputfält */
 .modal-content input,
 .modal-content textarea {
   width: 60%; /* centrerar lite snyggare än 100% */
@@ -78,7 +75,7 @@ label {
   padding: 0.8rem;
   margin-bottom: 1rem;
   transition: border-color 0.3s ease;
-  text-align: left; /* håller texten vänsterställd */
+  text-align: left;
 }
 
 .modal-content input:focus,
@@ -124,7 +121,6 @@ label {
   box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
 }
 
-/* Fade animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

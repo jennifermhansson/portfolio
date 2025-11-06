@@ -1,7 +1,6 @@
 /* ✅ Importera font */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
-/* ✅ Globala variabler för färgtema */
 :root {
   --bg-dark: #1a1a1a;
   --bg-card: #232323;
@@ -11,11 +10,12 @@
   --accent-blue: #66d9ef;
   --border-dark: #3b3b3b;
   --shadow-dark: rgba(0, 0, 0, 0.5);
+  --nav-h: 75px;
 }
 
-/* ✅ Grundinställningar */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
 }
 
 html,
@@ -26,14 +26,12 @@ body,
   background-color: var(--bg-dark);
 }
 
-/* ✅ Font + text */
 body {
   font-family: "Inconsolata", sans-serif;
   color: var(--text-light);
   overflow-x: hidden;
 }
 
-/* ✅ Ta bort default-margins från headings, paragraphs etc */
 h1,
 h2,
 h3,
@@ -46,7 +44,6 @@ ul {
   padding: 0;
 }
 
-/* ✅ Standard länk-styles */
 a {
   color: var(--accent-blue);
   text-decoration: none;
@@ -57,5 +54,5 @@ a:hover {
   color: var(--accent-green);
 }
 main {
-  padding-top: 80px; /* För att inte hamna under navbar */
+  padding-top: 80px;
 }
