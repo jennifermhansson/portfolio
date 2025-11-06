@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
@@ -23,6 +23,27 @@ function Contact({ onClose }) {
     }
   };
 
+  // ✅ Lyssna på Escape & Enter
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose(); // stäng modalen
+      }
+
+      // Enter = skicka (men inte i textarea!)
+      if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
+        const formEl = form.current;
+        if (formEl) {
+          event.preventDefault();
+          formEl.requestSubmit(); // triggar onSubmit
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -38,10 +59,13 @@ function Contact({ onClose }) {
             <form ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" required />
+
               <label>Email</label>
               <input type="email" name="user_email" required />
+
               <label>Message</label>
               <textarea name="message" required />
+
               <div className="modal-buttons">
                 <input type="submit" value="Send" />
                 <button type="button" onClick={onClose}>

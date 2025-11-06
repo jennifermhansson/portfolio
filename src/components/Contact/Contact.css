@@ -8,6 +8,7 @@ label {
 @media (max-width: 600px) {
   form {
     padding: 2rem 1.2rem;
+    margin-top: 2rem;
   }
 }
 .contact-btn {
@@ -131,3 +132,16 @@ label {
     transform: translateY(0);
   }
 }
+/* ⬇ Justera placering av modalen på större skärmar */
+@media (min-width: 768px) {
+  .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrerar alltid exakt vertikalt */
+  }
+}
+/* 
+  .modal-content {
+    margin-top: 8rem;
+  }
+ */

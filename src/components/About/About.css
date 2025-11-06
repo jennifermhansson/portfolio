@@ -6,7 +6,7 @@ html {
   padding: 5rem 2rem;
   background: #1a1a1a9b;
   color: #f8f8f2;
-  scroll-margin-top: 200px; /* motsvarar navbarens höjd */
+  scroll-margin-top: 90px;
 }
 
 .about-section h2 {

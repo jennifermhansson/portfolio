@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"):
-  root {
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+root {
   --bg-dark: #1a1a1a;
   --bg-card: #232323;
   --text-light: #f8f8f2;
@@ -13,7 +14,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-h);
+  scroll-padding-top: 90px;
 }
 
 html,
@@ -22,6 +23,15 @@ body,
   height: 100%;
   margin: 0;
   background-color: var(--bg-dark);
+}
+
+main,
+section,
+.hero,
+.about-section,
+.projects-section {
+  position: relative;
+  z-index: 1;
 }
 
 body {

@@ -16,10 +16,6 @@
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
-  backface-visibility: hidden;
-  border-radius: 15% 0;
-  overflow: hidden;
-  box-shadow: rgba(72, 202, 174, 0.223) 0 0 100px 1px;
 }
 
 .flip-inner {
