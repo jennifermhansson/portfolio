@@ -1,7 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .about-section {
   padding: 5rem 2rem;
-  background: #1a1a1a;
+  background: #1a1a1a9b;
   color: #f8f8f2;
+  scroll-margin-top: 200px; /* motsvarar navbarens höjd */
 }
 
 .about-section h2 {
@@ -128,10 +133,4 @@
   font-size: 0.95rem;
   color: #a9a9a9;
   line-height: 1.5;
-}
-
-/* Se till att allt innehåll ligger ovanpå blob */
-.about-section > *:not(.blur-blob) {
-  position: relative;
-  z-index: 1;
 }
