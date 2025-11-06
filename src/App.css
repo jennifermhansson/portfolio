@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 /* ✅ Importera font */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+=======
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+main,
+header,
+footer,
+section,
+#root {
+  position: relative;
+  z-index: 1; /* ✅ Innehåll hamnar ovanför partiklar */
+}
+>>>>>>> restore-working-version
 
 :root {
   --bg-dark: #1a1a1a;
@@ -15,7 +28,11 @@
 
 html {
   scroll-behavior: smooth;
+<<<<<<< HEAD
   scroll-padding-top: var(--nav-h);
+=======
+  --nav-h: 75px; /* samma som i .navbar */
+>>>>>>> restore-working-version
 }
 
 html,

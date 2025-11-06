@@ -44,6 +44,7 @@ function Hero() {
           </div>
         </div>
 
+<<<<<<< HEAD
         <div className="hero-content">
           <p id="hello">Hello!</p>
           <h2>
@@ -75,6 +76,38 @@ function Hero() {
               </svg>
             </a>
           </div>
+=======
+      <div className="hero-content">
+        <p id="hello">Hello!</p>
+        <h2>
+          I'm Jennifer Hansson <br /> an aspiring{" "}
+          <span className="highlight">Fullstack Developer</span>
+        </h2>
+        <div className="description">
+          <p>
+            My portfolio is a living project – it grows, changes, and improves
+            as I do as a developer.
+          </p>
+          <p>
+            I created this with dedication, curiosity, and plenty of late night
+            coding sessions.
+          </p>
+          <p className="cta">
+            Curious about what I’ve done so far? Read more about me!
+          </p>{" "}
+          <br />
+          <a href="#about" className="svg-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24">
+              <path
+                d="M12 5v14M5 12l7 7 7-7"
+                stroke="#45c1a0"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+          </a>
+>>>>>>> restore-working-version
         </div>
       </motion.section>
     </>

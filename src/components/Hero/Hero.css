@@ -1,6 +1,10 @@
 .hero {
   min-height: 100vh;
+<<<<<<< HEAD
   padding: 6rem 3rem;
+=======
+  padding: 4rem 3rem; /* Extra padding-top för fixed navbar */
+>>>>>>> restore-working-version
   background: rgba(32, 32, 32, 0.5);
   color: #f8f8f2;
   display: flex;
@@ -16,6 +20,10 @@
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
+  backface-visibility: hidden;
+  border-radius: 15% 0;
+  overflow: hidden;
+  box-shadow: rgba(72, 202, 174, 0.223) 0 0 100px 1px;
 }
 
 .flip-inner {
@@ -56,6 +64,7 @@
 #hello {
   font-size: 1.3rem;
   margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 .hero-content {
@@ -73,7 +82,11 @@
 }
 
 .description {
+<<<<<<< HEAD
   font-size: 1.1rem;
+=======
+  font-size: 1.2rem;
+>>>>>>> restore-working-version
   line-height: 1.6;
   color: #ccc;
 }
@@ -98,6 +111,11 @@
 .svg-arrow {
   display: inline-block;
   animation: bounce 1.5s infinite;
+<<<<<<< HEAD
+=======
+  color: #45c1a0;
+  font-size: 2rem;
+>>>>>>> restore-working-version
 }
 
 @keyframes bounce {
@@ -111,6 +129,11 @@
     opacity: 1;
   }
 }
+<<<<<<< HEAD
+=======
+
+/* ===== Desktop Layout: Split image + text ===== */
+>>>>>>> restore-working-version
 @media (min-width: 900px) {
   .hero {
     flex-direction: row;
