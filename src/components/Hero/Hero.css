@@ -1,10 +1,6 @@
 .hero {
   min-height: 100vh;
-<<<<<<< HEAD
   padding: 6rem 3rem;
-=======
-  padding: 4rem 3rem; /* Extra padding-top för fixed navbar */
->>>>>>> restore-working-version
   background: rgba(32, 32, 32, 0.5);
   color: #f8f8f2;
   display: flex;
@@ -82,11 +78,7 @@
 }
 
 .description {
-<<<<<<< HEAD
   font-size: 1.1rem;
-=======
-  font-size: 1.2rem;
->>>>>>> restore-working-version
   line-height: 1.6;
   color: #ccc;
 }
@@ -111,11 +103,6 @@
 .svg-arrow {
   display: inline-block;
   animation: bounce 1.5s infinite;
-<<<<<<< HEAD
-=======
-  color: #45c1a0;
-  font-size: 2rem;
->>>>>>> restore-working-version
 }
 
 @keyframes bounce {
@@ -129,11 +116,6 @@
     opacity: 1;
   }
 }
-<<<<<<< HEAD
-=======
-
-/* ===== Desktop Layout: Split image + text ===== */
->>>>>>> restore-working-version
 @media (min-width: 900px) {
   .hero {
     flex-direction: row;

@@ -31,10 +31,7 @@ function App() {
   return (
     <>
       <BackgroundParticles />
-<<<<<<< HEAD
 
-=======
->>>>>>> restore-working-version
       <Navbar onContactClick={() => setShowContact(true)} />
 
       <main>
