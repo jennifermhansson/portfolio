@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Contact from "./components/Contact/Contact";
 import "./App.css";
+import BackgroundParticles from "./components/BackgroundParticles";
 
 // ✅ Lazy-load stora sektioner
 const About = lazy(() => import("./components/About/About"));
@@ -31,6 +32,8 @@ function App() {
 
   return (
     <>
+      <BackgroundParticles />
+
       <Navbar onContactClick={() => setShowContact(true)} />
 
       <main>

@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Code, Database, Palette, CheckCircle } from "lucide-react";
+import { CodeXml, Database, Palette, PersonStanding } from "lucide-react";
 import "./About.css";
 
 function About() {
   const skills = [
     {
-      icon: <Code size={28} />,
+      icon: <CodeXml size={28} />,
       title: "Current Tech stack",
-      desc: "React, Javascript, TypeScript, Git, API integration",
+      desc: "React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations",
       color: "cyan",
     },
     {
@@ -23,9 +23,9 @@ function About() {
       color: "orange",
     },
     {
-      icon: <CheckCircle size={28} />,
-      title: "Best practices",
-      desc: "Git, Testing, Clean Code, Agile Methods",
+      icon: <PersonStanding size={28} />,
+      title: "About me",
+      desc: "10+ years XP in HR, solving people problems — now solving code problems ",
       color: "pink",
     },
   ];
@@ -33,22 +33,20 @@ function About() {
   return (
     <section className="about-section" id="about">
       <div className="about-wrapper">
-        {/* ✅ Vänster text */}
         <div className="about-text">
           <h2>My Journey</h2>
           <p>
-            When I'm not crafting code, you'll find me playing hide & seek with
-            my kids, spending time at the gym (hiding from the kids😉) or
-            playing zombie games preparing for a digital apocalypse.
+            When I'm not writing code, you'll find me playing hide & seek with
+            my kids, sneaking of to the gym (hiding from the kids😉) or playing
+            zombie games preparing for a digital apocalypse.
           </p>
           <p>
-            I’m currently studying Fullstack Development Open Source and I’m
-            eager to explore the backend and understand the full architecture
-            that powers modern web applications.
+            I’m currently studying Fullstack Development Open Source. I started
+            with front-end, but I’m eager to dive into backend and understand
+            the full architecture behind modern web applications.
           </p>
         </div>
 
-        {/* ✅ Höger – skills grid */}
         <div className="skills-grid">
           {skills.map((skill, i) => (
             <motion.div

@@ -27,7 +27,6 @@ label {
   transform: translateY(-2px);
 }
 
-/* 🪩 Popup overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -38,13 +37,13 @@ label {
   z-index: 999;
 }
 
-/* Popup-fönstret */
 .modal-content {
   background: #232323;
   color: #f8f8f2;
+  font-size: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  width: 90%;
+  width: 80%;
   max-width: 500px;
   border: 1px solid #3c3d37;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -52,12 +51,15 @@ label {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centrerar vertikalt inom popupen */
-  align-items: center; /* centrerar horisontellt */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-/* Gör formens innehåll centrerat */
+.modal-content p {
+  margin: 10px;
+}
+
 .modal-content form {
   width: 100%;
   display: flex;
@@ -68,7 +70,7 @@ label {
 /* Inputfält */
 .modal-content input,
 .modal-content textarea {
-  width: 70%; /* centrerar lite snyggare än 100% */
+  width: 60%; /* centrerar lite snyggare än 100% */
   background: #1e1e1e;
   color: #f8f8f2;
   border: 1px solid #3b3b3b;
@@ -85,41 +87,41 @@ label {
   outline: none;
 }
 
-/* Centrerar knapparna ordentligt */
 .modal-buttons {
   width: 100%;
   display: flex;
-  justify-content: center; /* centrera hela gruppen */
-  gap: 1rem; /* mellanrum mellan knapparna */
+  justify-content: center;
+  gap: 1rem;
   margin-top: 1.5rem;
 }
 
 .modal-buttons input[type="submit"],
 .modal-buttons button {
   max-width: 120px; /* samma bredd */
-  max-height: 40px;
+  max-height: 38.5px;
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
   font-weight: 500;
   font-family: inherit;
-  border: 1px solid #45c1a0;
+  color: #ccc;
+  border: 1px solid #3b3b3b;
   background: transparent;
-  color: #45c1a0;
+
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .modal-buttons input[type="submit"]:hover {
-  color: #fff;
-  background-color: #45c1a0;
+  transform: translateY(-5px);
   border-color: #45c1a0;
+  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
 }
 
 .modal-buttons button:hover {
-  color: #fff;
-  background-color: #45c1a0;
+  transform: translateY(-5px);
   border-color: #45c1a0;
+  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
 }
 
 /* Fade animation */

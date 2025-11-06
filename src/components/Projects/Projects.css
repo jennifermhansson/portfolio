@@ -1,7 +1,7 @@
 /* ==== Sektion wrapper ==== */
 .projects {
   padding: 6rem 2rem;
-  background: rgb(32, 32, 32);
+  background: rgb(32, 32, 32, 0.5);
   color: #f8f8f2;
   text-align: center;
   position: relative;
@@ -51,8 +51,8 @@
 }
 /* ==== Project card ==== */
 .project-card {
-  background: #1e1e1e;
-  border: 1px solid #3b3b3b;
+  background: #232323;
+  border: 1px solid #333;
   border-radius: 1rem;
   padding: 1.4rem;
   text-align: center;
@@ -145,8 +145,8 @@
 
 .projects-all a {
   background: transparent;
-  color: #45c1a0;
-  border: 1px solid #45c1a0;
+  color: #ccc;
+  border: 1px solid #3b3b3b;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-weight: 500;
@@ -155,11 +155,7 @@
 }
 
 .projects-all a:hover {
-  background: #45c1a0;
-  color: #1a1a1a;
-}
-
-.projects > *:not(.blur-blob) {
-  position: relative;
-  z-index: 2;
+  transform: translateY(-5px);
+  border-color: #45c1a0;
+  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
 }
