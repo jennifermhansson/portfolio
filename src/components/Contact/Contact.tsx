@@ -1,13 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
-function Contact({ onClose }) {
-  const form = useRef();
+interface ContactProps {
+  onClose: () => void;
+}
+
+function Contact({ onClose }: ContactProps) {
+  // Typa refen som HTMLFormElement | null
+  const form = useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const sendEmail = async (e) => {
+  const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!form.current) return;
 
     try {
       await emailjs.sendForm(
@@ -18,20 +25,20 @@ function Contact({ onClose }) {
       );
       setSuccess(true);
       setTimeout(() => onClose(), 3500);
-    } catch (error) {
-      console.log("FAILED...", error.text);
+    } catch (error: any) {
+      console.error("FAILED...", error.text);
     }
   };
 
   // ✅ Lyssna på Escape & Enter
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose(); // stäng modalen
       }
 
       // Enter = skicka (men inte i textarea!)
-      if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
+      if (event.key === "Enter" && event.target instanceof HTMLElement && event.target.tagName !== "TEXTAREA") {
         const formEl = form.current;
         if (formEl) {
           event.preventDefault();

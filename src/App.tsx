@@ -41,7 +41,7 @@ function App() {
 
         <Suspense
           fallback={
-            <p style={{ color: "#fff", textAlign: "center" }}>Loading...</p>
+            <p style={{ color: "#3ca7c278", textAlign: "center" }}>.</p>
           }
         >
           <section id="about">

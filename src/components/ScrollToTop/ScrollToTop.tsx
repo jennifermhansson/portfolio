@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./ScrollToTop.css";
 
 function ScrollToTop() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => setVisible(window.scrollY > 300);

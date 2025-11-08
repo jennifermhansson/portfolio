@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import "./Navbar.css";
 
-function Navbar({ onContactClick }) {
-  const handleContactClick = (e) => {
+type NavbarProps = {
+  onContactClick: () => void;
+};
+
+function Navbar({ onContactClick }: NavbarProps) {
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     onContactClick();
   };

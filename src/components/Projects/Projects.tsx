@@ -3,11 +3,22 @@ import { motion } from "framer-motion";
 import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import "./Projects.css";
 
+interface Repo {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  homepage: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string;
+}
+
 function Projects() {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const hasLoaded = useRef(false); // Ser till att vi inte hämtar flera gånger
-  const sectionRef = useRef(null);
+  const [repos, setRepos] = useState<Repo[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const hasLoaded = useRef(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   // DINA UTVALDA PROJEKT – exakt som tidigare
   const selectedProjects = [
@@ -58,6 +69,9 @@ function Projects() {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
+
+        if (!entry) return
+
         if (entry.isIntersecting && !hasLoaded.current) {
           hasLoaded.current = true;
           setLoading(true);

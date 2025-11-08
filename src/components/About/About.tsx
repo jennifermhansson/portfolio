@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
 import { CodeXml, Database, Palette, PersonStanding } from "lucide-react";
 import "./About.css";
+import type { JSX } from "react";
+
+interface Skill {
+  icon: JSX.Element;
+  title: string;
+  desc: string;
+  color: string;
+}
 
 function About() {
-  const skills = [
+  const skills: Skill[] = [
     {
       icon: <CodeXml size={28} />,
       title: "Current Tech stack",
