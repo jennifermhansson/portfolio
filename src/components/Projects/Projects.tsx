@@ -3,43 +3,10 @@ import { motion } from "framer-motion";
 import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import "./Projects.css";
 
-// 🔧 Hämtar pinned repos via GitHub GraphQL API
-async function fetchPinnedRepos() {
-  const query = `
-  {
-    user(login: "jennifermhansson") {
-      pinnedItems(first: 4, types: [REPOSITORY]) {  
-        nodes {
-          ... on Repository {
-            id
-            name
-            description
-            url
-            homepageUrl
-            stargazerCount
-            forkCount
-            primaryLanguage {
-              name
-            }
-          }
-        }
-      }
-    }
-  }`;
+// 🔧 Pinned repos via lokal JSON
+import pinned from "../../data/pinned.json";
 
-  const res = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-    },
-    body: JSON.stringify({ query }),
-  });
-
-  const json = await res.json();
-  return json.data?.user?.pinnedItems?.nodes || [];
-}
-
+// Samma interface du redan använder
 interface Repo {
   id: number;
   name: string;
@@ -51,14 +18,18 @@ interface Repo {
   language: string;
 }
 
+// 🔧 Fake fetch (lätt att byta senare mot Riktig API via serverless)
+async function fetchPinnedRepos(): Promise<Repo[]> {
+  return pinned;
+}
+
 function Projects() {
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const hasLoaded = useRef(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  // ⭐ REPLACED your previous selectedProjects logic.
-  // Lazy load pinned repos when section becomes visible
+  // Lazy load när sektionen kommer in i viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -70,23 +41,7 @@ function Projects() {
           setLoading(true);
 
           fetchPinnedRepos()
-            .then((data) => {
-              const formatted: Repo[] = data.map((r: any) => ({
-                id: r.id,
-                name: r.name,
-                description: r.description || "No description provided.",
-                html_url: r.url,
-                homepage: r.homepageUrl,
-                stargazers_count: r.stargazerCount,
-                forks_count: r.forkCount,
-                language: r.primaryLanguage?.name || "Unknown",
-              }));
-
-              setRepos(formatted);
-            })
-            .catch((err) => {
-              console.error("Failed to load pinned repos:", err);
-            })
+            .then((data) => setRepos(data))
             .finally(() => setLoading(false));
         }
       },
@@ -117,9 +72,9 @@ function Projects() {
       >
         <h2>Featured Projects</h2>
         <p id="my-projects">
-          I believe in learning by doing and every line of code is a step forward
-          in mastering my craft. Here are a few of my projects, both school work
-          and private open source projects.
+          I believe in learning by doing and every line of code is a step
+          forward in mastering my craft. Here are some of my highlighted
+          projects, from both school work and private development.
         </p>
       </motion.div>
 

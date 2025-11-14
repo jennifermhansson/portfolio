@@ -1,67 +1,36 @@
-// src/hooks/usePinnedRepos.ts
 import { useEffect, useState } from "react";
 
-export type PinnedRepo = {
-  id: string;
-  name: string;
-  description: string | null;
-  url: string;
-  homepageUrl: string | null;
-  stargazerCount: number;
-  languages: { nodes: { name: string }[] };
-};
+export interface PinnedRepo {
+  repo: string;
+  owner: string;
+  description: string;
+  language: string;
+  stars: number;
+  forks: number;
+  link: string;
+}
 
-export function usePinnedRepos(username: string) {
+export default function usePinnedRepos() {
   const [repos, setRepos] = useState<PinnedRepo[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchPinned() {
-      setLoading(true);
       try {
-        const query = `
-        {
-          user(login: "${username}") {
-            pinnedItems(first: 6, types: [REPOSITORY]) {
-              nodes {
-                ... on Repository {
-                  id
-                  name
-                  description
-                  url
-                  homepageUrl
-                  stargazerCount
-                  languages(first: 3) {
-                    nodes { name }
-                  }
-                }
-              }
-            }
-          }
-        }`;
-
-        const res = await fetch("https://api.github.com/graphql", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-          },
-          body: JSON.stringify({ query }),
-        });
-
-        const json = await res.json();
-        const pinned = json.data?.user?.pinnedItems?.nodes ?? [];
-        setRepos(pinned);
+        const res = await fetch(
+          "https://gh-pinned-repos.egoist.dev/?username=jennifermhansson"
+        );
+        const data = await res.json();
+        setRepos(data);
       } catch (err) {
-        setError("Could not fetch pinned repositories");
+        console.error("Failed to load pinned repos", err);
       } finally {
         setLoading(false);
       }
     }
 
     fetchPinned();
-  }, [username]);
+  }, []);
 
-  return { repos, loading, error };
+  return { repos, loading };
 }

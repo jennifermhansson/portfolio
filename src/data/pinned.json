@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "portfolio",
+    "description": "My portfolio showcasing projects, skills, and design aesthetics with smooth animations and clean UI",
+    "html_url": "https://github.com/jennifermhansson/portfolio",
+    "homepage": "https://jennifermhansson.github.io/portfolio/",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "language": "TypeScript"
+  },
+  {
+    "id": 2,
+    "name": "chat-app",
+    "description": "A real-time chat application powered by Socket.io, featuring live message updates",
+    "html_url": "https://github.com/jennifermhansson/chat-app",
+    "homepage": "",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "language": "JavaScript"
+  },
+  {
+    "id": 3,
+    "name": "beanbutton",
+    "description": "A fun side project. An interactive app to track brews and give kudos to the best brewer",
+    "html_url": "https://github.com/jennifermhansson/beanbutton",
+    "homepage": "",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript"
+  },
+  {
+    "id": 4,
+    "name": "calculator",
+    "description": "Simple calculator focused on fun design, smooth user interactions and accurate functionality",
+    "html_url": "https://github.com/jennifermhansson/calculator",
+    "homepage": "",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript"
+  }
+]
