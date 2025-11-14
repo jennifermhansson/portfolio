@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CodeXml, Database, Palette, PersonStanding } from "lucide-react";
+import { CodeXml, Database, Palette, Heart } from "lucide-react";
 import "./About.css";
 import type { JSX } from "react";
 
@@ -21,19 +21,19 @@ function About() {
     {
       icon: <Database size={28} />,
       title: "Up next",
-      desc: "Node.js, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD",
+      desc: "Node.js, PHP, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD",
       color: "lime",
     },
     {
       icon: <Palette size={28} />,
       title: "UI / UX Design",
-      desc: "Figma, Responsive Design, WCAG, Animations",
+      desc: "Figma, Accessibility (WCAG), Responsive Layouts, Motion Design",
       color: "orange",
     },
     {
-      icon: <PersonStanding size={28} />,
+      icon: <Heart size={28} />,
       title: "About me",
-      desc: "10+ years XP in HR, solving people problems — now solving code problems",
+      desc: "From people problems to code problems — over a decade in HR turned into a passion for tech",
       color: "pink",
     },
   ];
@@ -43,16 +43,15 @@ function About() {
       <div className="about-wrapper">
         <div className="about-text">
           <h2>My Journey</h2>
+             <p>
+          I’m currently in my first year of Fullstack Development (Open Source). I began with frontend, and now I’m eager to explore backend and learn how modern web applications are built from the ground up.
+          </p><br />
           <p>
             When I'm not writing code, you'll find me playing hide & seek with
             my kids, sneaking off to the gym (hiding from the kids😉) or playing
             zombie games preparing for a digital apocalypse.
           </p>
-          <p>
-            I’m currently studying Fullstack Development Open Source. I started
-            with front-end, but I’m eager to dive into backend and understand
-            the full architecture behind modern web applications.
-          </p>
+       
         </div>
 
         <div className="skills-grid">

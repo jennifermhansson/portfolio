@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import profileFront from "../../assets/profilephoto.webp";
 import profileBack from "../../assets/photojennifer_animated.webp";
-
 import "./Hero.css";
 
 export default function Hero() {
-  const [flipped, setFlipped] = useState<boolean>(false);
-
   return (
     <motion.section
       className="hero"
@@ -16,28 +12,13 @@ export default function Hero() {
       transition={{ duration: 0.8 }}
     >
       <div className="hero-image-section">
-        <div
-          className={`flip-card ${flipped ? "flipped" : ""}`}
-          onClick={() => setFlipped(!flipped)}
-        >
+        <div className="flip-card">
           <div className="flip-inner">
             <div className="flip-front">
-              <img
-                src={profileFront}
-                alt="Jennifer Hansson"
-                width={275}
-                height={377}
-                loading="lazy"
-              />
+              <img src={profileFront} alt="Jennifer Hansson" />
             </div>
             <div className="flip-back">
-              <img
-                src={profileBack}
-                alt="Animated Jennifer"
-                width={275}
-                height={377}
-                loading="lazy"
-              />
+              <img src={profileBack} alt="Animated Jennifer" />
             </div>
           </div>
         </div>
@@ -46,9 +27,10 @@ export default function Hero() {
       <div className="hero-content">
         <p id="hello">Hello!</p>
         <h2>
-          I'm Jennifer Hansson <br /> an aspiring{" "}
+          I'm Jennifer Hansson <br />– a future{" "}
           <span className="highlight">Fullstack Developer</span>
         </h2>
+
         <div className="description">
           <p>
             My portfolio is a living project – it grows, changes, and improves
@@ -61,7 +43,9 @@ export default function Hero() {
           <p className="cta">
             Curious about what I’ve done so far? Read more about me!
           </p>
+
           <br />
+
           <a href="#about" className="svg-arrow">
             <svg width="40" height="40" viewBox="0 0 24 24">
               <path

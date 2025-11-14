@@ -15,20 +15,33 @@
 
 .flip-card {
   perspective: 1000px;
-  cursor: pointer;
 }
 
 .flip-inner {
   position: relative;
   width: 220px;
   height: 220px;
-  transform-style: preserve-3d;
-  transition: transform 0.8s;
   margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: autoFlip 9s ease-in-out infinite;
 }
 
-.flipped .flip-inner {
-  transform: rotateY(180deg);
+@keyframes autoFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  10% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  60% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 .flip-front,

@@ -3,6 +3,43 @@ import { motion } from "framer-motion";
 import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import "./Projects.css";
 
+// 🔧 Hämtar pinned repos via GitHub GraphQL API
+async function fetchPinnedRepos() {
+  const query = `
+  {
+    user(login: "jennifermhansson") {
+      pinnedItems(first: 4, types: [REPOSITORY]) {  
+        nodes {
+          ... on Repository {
+            id
+            name
+            description
+            url
+            homepageUrl
+            stargazerCount
+            forkCount
+            primaryLanguage {
+              name
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+  const res = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+    },
+    body: JSON.stringify({ query }),
+  });
+
+  const json = await res.json();
+  return json.data?.user?.pinnedItems?.nodes || [];
+}
+
 interface Repo {
   id: number;
   name: string;
@@ -20,74 +57,43 @@ function Projects() {
   const hasLoaded = useRef(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  // DINA UTVALDA PROJEKT – exakt som tidigare
-  const selectedProjects = [
-    {
-      id: 1,
-      name: "Examination Project",
-      description: "A responsive website built with HTML, CSS & JavaScript",
-      html_url: "https://github.com/jennifermhansson/examination",
-      homepage: "https://vercel.com/jennifermhanssons-projects/examination",
-      stargazers_count: 0,
-      forks_count: 0,
-      language: "JavaScript",
-    },
-    {
-      id: 2,
-      name: "Portfolio",
-      description: "My portfolio built with React & Javascript",
-      html_url: "https://github.com/jennifermhansson/portfolio",
-      homepage: "https://jennifermhansson.github.io/portfolio/",
-      stargazers_count: 0,
-      forks_count: 0,
-      language: "React",
-    },
-    {
-      id: 3,
-      name: "Bean Button",
-      description: "App for coffee lovers *work in progress*",
-      html_url: "https://github.com/jennifermhansson/beanbutton",
-      homepage: "",
-      stargazers_count: 0,
-      forks_count: 0,
-      language: "JavaScript",
-    },
-    {
-      id: 4,
-      name: "To-Do App",
-      description: "Simple to-do list with localStorage built in Javascript.",
-      html_url: "https://github.com/jennifermhansson/todo-app",
-      homepage: "",
-      stargazers_count: 0,
-      forks_count: 0,
-      language: "JavaScript",
-    },
-  ];
-
-  // ✅ Lazy load med Intersection Observer (hämtar när sektionen syns)
+  // ⭐ REPLACED your previous selectedProjects logic.
+  // Lazy load pinned repos when section becomes visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-
-        if (!entry) return
+        if (!entry) return;
 
         if (entry.isIntersecting && !hasLoaded.current) {
           hasLoaded.current = true;
           setLoading(true);
 
-          // Fake fetch delay för att simulera data-hämtning
-          setTimeout(() => {
-            setRepos(selectedProjects);
-            setLoading(false);
-          }, 600);
+          fetchPinnedRepos()
+            .then((data) => {
+              const formatted: Repo[] = data.map((r: any) => ({
+                id: r.id,
+                name: r.name,
+                description: r.description || "No description provided.",
+                html_url: r.url,
+                homepage: r.homepageUrl,
+                stargazers_count: r.stargazerCount,
+                forks_count: r.forkCount,
+                language: r.primaryLanguage?.name || "Unknown",
+              }));
+
+              setRepos(formatted);
+            })
+            .catch((err) => {
+              console.error("Failed to load pinned repos:", err);
+            })
+            .finally(() => setLoading(false));
         }
       },
       { threshold: 0.2 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
@@ -111,9 +117,9 @@ function Projects() {
       >
         <h2>Featured Projects</h2>
         <p id="my-projects">
-          I believe in learning by doing and every line of code is a step
-          forward in mastering my craft. Here are a few of my projects, both
-          school work and private open source projects.
+          I believe in learning by doing and every line of code is a step forward
+          in mastering my craft. Here are a few of my projects, both school work
+          and private open source projects.
         </p>
       </motion.div>
 
@@ -139,7 +145,9 @@ function Projects() {
                 </h3>
                 <span>{repo.language}</span>
               </div>
+
               <p>{repo.description}</p>
+
               <div className="project-footer">
                 <div className="stats">
                   <span>
