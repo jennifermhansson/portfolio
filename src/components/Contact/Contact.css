@@ -11,19 +11,6 @@ label {
     margin-top: 2rem;
   }
 }
-.contact-btn {
-  background: #45c1a0;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  color: #1a1a1a;
-  font-weight: 600;
-  cursor: pointer;
-}
-.contact-btn:hover {
-  background: #fff;
-}
-
 .modal-overlay {
   position: fixed;
   inset: 0;

@@ -50,11 +50,10 @@ export default function Hero() {
             coding sessions.
           </p>
           <p className="cta">
-            Curious about what I’ve done so far? Read more about me!
-          </p>
+Ready to see the full journey? Scroll down to dive in!</p>
 
           <br />
-
+          <div className="scroll-prompt">
           <div className="svg-arrow" onClick={scrollToAbout} style={{ cursor: "pointer"}}>
             <svg width="40" height="40" viewBox="0 0 24 24">
               <path
@@ -65,6 +64,7 @@ export default function Hero() {
                 strokeLinecap="round"
               />
             </svg>
+        </div>
         </div>
       </div>
       </div>

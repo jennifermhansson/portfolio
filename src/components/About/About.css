@@ -124,3 +124,12 @@ html {
   color: var(--secondary-text);
   line-height: 1.5;
 }
+.scroll-prompt {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .scroll-prompt {
+    display: block;
+  }
+}

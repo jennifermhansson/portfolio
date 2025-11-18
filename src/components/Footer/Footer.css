@@ -31,25 +31,24 @@
 .footer-btn {
   background: transparent;
   border: none;
-  color: #45c1a0;
-
-  border-radius: 8px;
+  padding: 0;
+  color: var(--accent-color);
+  font-weight: 600;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .footer-btn:hover {
-  color: #a6e22e;
+  color: #fff;
 }
 
 .footer-copy {
   font-size: 0.9rem;
-  color: #9e9e9e;
+  color: var(--secondary-text);
 }
 
 .footer-copy span {
-  color: #45c1a0;
+  color: var(--accent-color);
   font-weight: 600;
 }
 

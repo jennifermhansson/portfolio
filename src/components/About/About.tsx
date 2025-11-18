@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CodeXml, Database, Palette, Heart } from "lucide-react";
+import { CodeXml, Database, Puzzle, Heart } from "lucide-react";
 import "./About.css";
 import "../../App.css"
 import type { JSX } from "react";
@@ -7,16 +7,24 @@ import type { JSX } from "react";
 interface Skill {
   icon: JSX.Element;
   title: string;
-  desc: string;
+  desc: string | JSX.Element;
   color: string;
 }
 
 function About() {
+
+  const scrollToProjects = () => {
+    const element = document.getElementById("my-projects")
+    if(element) {
+      element.scrollIntoView({ behavior: "smooth"})
+    }
+  }
+
   const skills: Skill[] = [
     {
       icon: <CodeXml size={28} />,
       title: "Current Tech stack",
-      desc: "React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations",
+      desc: "React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations, Postman",
       color: "cyan",
     },
     {
@@ -26,17 +34,30 @@ function About() {
       color: "lime",
     },
     {
-      icon: <Palette size={28} />,
-      title: "UI / UX Design",
-      desc: "Figma, Accessibility (WCAG), Responsive Layouts, Motion Design",
-      color: "orange",
-    },
-    {
       icon: <Heart size={28} />,
       title: "About me",
-      desc: "From people problems to code problems — over a decade in HR turned into a passion for tech",
+desc: (
+  <>
+    From people problems to code problems — over a decade in HR turned into a{" "}
+    <span style={{ 
+      fontWeight: "bold",
+      background: "linear-gradient(to left, #45c1a0, #f92672)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}>
+      passion for tech
+    </span>
+  </>
+),
       color: "pink",
     },
+    {
+      icon: <Puzzle size={28} />,
+      title: "Agile Methodology",
+      desc: "Structured problem-solving meets collaborative Agile methodology.",
+      color: "orange",
+    },
+    
   ];
 
   return (
@@ -50,9 +71,22 @@ function About() {
           <p>
             When I'm not writing code, you'll find me playing hide & seek with
             my kids, sneaking off to the gym (hiding from the kids😉) or playing
-            zombie games preparing for a digital apocalypse.
+            video games preparing for a digital apocalypse.
           </p>
-       
+          <div className="scroll-prompt">
+          <p>Take a look at my latest projects</p>
+            <div className="svg-arrow" onClick={scrollToProjects} style={{ cursor: "pointer"}}>
+            <svg width="40" height="40" viewBox="0 0 24 24">
+              <path
+                d="M12 5v14M5 12l7 7 7-7"
+                stroke="#45c1a0"
+                strokeWidth={2}
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+            </div>
+        </div>
         </div>
 
         <div className="skills-grid">
