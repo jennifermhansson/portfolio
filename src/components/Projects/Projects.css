@@ -1,7 +1,6 @@
 .projects {
   padding: 6rem 2rem;
-  background: rgb(32, 32, 32, 0.5);
-  color: #f8f8f2;
+  background: var(--bg-color-grey);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -10,7 +9,7 @@
 
 .projects-header h2 {
   font-size: 2rem;
-  color: #45c1a0;
+  color: var(--accent-color);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -18,7 +17,7 @@
 #my-projects {
   max-width: 700px;
   margin: 0 auto 3rem auto;
-  color: #ccc;
+  color: var(--primary-text);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -46,26 +45,25 @@
 }
 
 .project-card {
-  background: #232323;
-  border: 1px solid #333;
+  background: var(--bg-cards);
+  border: var(--border-cards);
   border-radius: 1rem;
   padding: 1.4rem;
   text-align: center;
   width: 90%;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 140px;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: #45c1a0;
-  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
+  border-color: var(--border-cards-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .project-header {
   min-height: 48px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,14 +81,14 @@
 
 .project-header span {
   background: #2c2d2f;
-  color: #45c1a0;
+  color: var(--accent-color);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-size: 0.8rem;
 }
 
 .project-card p {
-  color: #cccccc;
+  color: var(--secondary-text);
   font-size: 0.95rem;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -109,7 +107,7 @@
 .stats {
   display: flex;
   gap: 1rem;
-  color: #a6a6a6;
+  color: var(--secondary-text);
   font-size: 0.9rem;
 }
 
@@ -120,13 +118,13 @@
 }
 
 .links a {
-  color: #45c1a0;
+  color: var(--accent-color);
   margin-left: 0.6rem;
   transition: color 0.3s ease;
 }
 
 .links a:hover {
-  color: #a6e22e;
+  color: #fff;
 }
 
 .projects-all {
@@ -136,7 +134,7 @@
 .projects-all a {
   background: transparent;
   color: #ccc;
-  border: 1px solid #3b3b3b;
+  border: var(--border-cards);
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-weight: 500;
@@ -146,6 +144,6 @@
 
 .projects-all a:hover {
   transform: translateY(-5px);
-  border-color: #45c1a0;
-  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
+  border-color: var(--border-cards-hover);
+  box-shadow: var(--shadow-hover);
 }

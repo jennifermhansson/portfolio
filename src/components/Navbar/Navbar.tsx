@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "./Navbar.css";
+import "../../App.css"
 
 type NavbarProps = {
   onContactClick: () => void;

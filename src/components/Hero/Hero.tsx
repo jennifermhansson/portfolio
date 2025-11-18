@@ -2,8 +2,17 @@ import { motion } from "framer-motion";
 import profileFront from "../../assets/profilephoto.webp";
 import profileBack from "../../assets/photojennifer_animated.webp";
 import "./Hero.css";
+import "../../App.css"
 
 export default function Hero() {
+
+  const scrollToAbout = () => {
+    const element = document.getElementById("about")
+    if(element) {
+      element.scrollIntoView({ behavior: "smooth"})
+    }
+  }
+
   return (
     <motion.section
       className="hero"
@@ -46,7 +55,7 @@ export default function Hero() {
 
           <br />
 
-          <a href="#about" className="svg-arrow">
+          <div className="svg-arrow" onClick={scrollToAbout} style={{ cursor: "pointer"}}>
             <svg width="40" height="40" viewBox="0 0 24 24">
               <path
                 d="M12 5v14M5 12l7 7 7-7"
@@ -56,8 +65,8 @@ export default function Hero() {
                 strokeLinecap="round"
               />
             </svg>
-          </a>
         </div>
+      </div>
       </div>
     </motion.section>
   );

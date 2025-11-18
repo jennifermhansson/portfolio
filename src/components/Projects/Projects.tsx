@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import "./Projects.css";
+import "../../App.css"
 
 // 🔧 Pinned repos via lokal JSON
 import pinned from "../../data/pinned.json";

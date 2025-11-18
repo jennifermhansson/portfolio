@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./ScrollToTop.css";
+import "../../App.css"
 
 function ScrollToTop() {
   const [visible, setVisible] = useState<boolean>(false);

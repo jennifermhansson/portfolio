@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CodeXml, Database, Palette, Heart } from "lucide-react";
 import "./About.css";
+import "../../App.css"
 import type { JSX } from "react";
 
 interface Skill {

@@ -3,7 +3,7 @@
   bottom: 2.2rem;
   right: 2.2rem;
   background: #2c2d2f;
-  color: #45c1a0;
+  color: var(--accent-color);
   border: 1px solid #3c3d37;
   border-radius: 50%;
   width: 48px;
@@ -25,7 +25,7 @@
 }
 
 .scroll-top-btn:hover {
-  background: #45c1a0;
+  background: #ccc;
   color: #1a1a1a;
   transform: translateY(-3px);
 }

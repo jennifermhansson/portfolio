@@ -1,6 +1,6 @@
 .footer {
   background: #1a1a1a;
-  color: #f8f8f2;
+  color: var(--secondary-text);
   text-align: center;
   padding: 2.5rem 1rem;
   border-top: 1px solid #2c2d2f;
@@ -22,12 +22,10 @@
 .footer-icons a {
   font-size: 1.5rem;
   color: #45c1a0;
-  transition: all 0.3s ease;
 }
 
 .footer-icons a:hover {
-  color: #a6e22e;
-  transform: translateY(-3px);
+  color: #fff;
 }
 
 .footer-btn {

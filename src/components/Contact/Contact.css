@@ -1,6 +1,6 @@
 label {
   font-weight: 600;
-  color: #45c1a0;
+  color: var(--accent-color);
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
@@ -19,11 +19,9 @@ label {
   color: #1a1a1a;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 .contact-btn:hover {
-  background: #a6e22e;
-  transform: translateY(-2px);
+  background: #fff;
 }
 
 .modal-overlay {
@@ -37,15 +35,15 @@ label {
 }
 
 .modal-content {
-  background: #232323;
+  background: var(--bg-cards);
   color: #f8f8f2;
   font-size: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   width: 80%;
   max-width: 500px;
-  border: 1px solid #3c3d37;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: var(--border-cards);
+  box-shadow: var(--shadow-primary);
   animation: fadeIn 0.3s ease;
 
   display: flex;
@@ -71,7 +69,7 @@ label {
   width: 60%; /* centrerar lite snyggare än 100% */
   background: #1e1e1e;
   color: #f8f8f2;
-  border: 1px solid #3b3b3b;
+  border: var(--border-cards);
   border-radius: 6px;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -101,8 +99,8 @@ label {
   border-radius: 8px;
   font-weight: 500;
   font-family: inherit;
-  color: #ccc;
-  border: 1px solid #3b3b3b;
+  color: var(--primary-text);
+  border: var(--border-cards);
   background: transparent;
 
   cursor: pointer;
@@ -111,15 +109,15 @@ label {
 }
 
 .modal-buttons input[type="submit"]:hover {
-  transform: translateY(-5px);
-  border-color: #45c1a0;
-  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
+  transform: translateY(-3px);
+  border-color: var(--border-cards-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .modal-buttons button:hover {
-  transform: translateY(-5px);
-  border-color: #45c1a0;
-  box-shadow: 0 8px 22px rgba(69, 193, 160, 0.15);
+  transform: translateY(-3px);
+  border-color: var(--border-cards-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 @keyframes fadeIn {
@@ -140,8 +138,3 @@ label {
     align-items: center; /* Centrerar alltid exakt vertikalt */
   }
 }
-/* 
-  .modal-content {
-    margin-top: 8rem;
-  }
- */

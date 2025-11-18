@@ -4,17 +4,10 @@ html {
 
 .about-section {
   padding: 5rem 2rem;
-  background: #1a1a1a9b;
-  color: #f8f8f2;
+  background: var(--bg-color-dark);
   scroll-margin-top: 90px;
 }
 
-.about-section h2 {
-  color: #45c1a0;
-  font-size: 2rem;
-  text-align: center;
-}
-/* Wrapper för att dela upp layout */
 .about-wrapper {
   display: flex;
   flex-direction: column;
@@ -31,7 +24,6 @@ html {
   }
 }
 
-/* ✅ Vänster text */
 .about-text {
   flex: 1;
   max-width: 500px;
@@ -46,7 +38,7 @@ html {
 }
 
 .about-text h2 {
-  color: #45c1a0;
+  color: var(--accent-color);
   font-size: 2rem;
   margin-bottom: 1.2rem;
 }
@@ -54,11 +46,10 @@ html {
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--primary-text);
   margin-bottom: 1rem;
 }
 
-/* ✅ Höger – skills-kort */
 .skills-grid {
   flex: 1;
   display: grid;
@@ -74,14 +65,14 @@ html {
 
 /* ===== Skill Card ===== */
 .skill-card {
-  background: #232323;
-  border: 1px solid #333;
+  background: var(--bg-cards);
+  border: var(--border-cards);
   border-radius: 12px;
   padding: 1.8rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: var(shadow-primary);
   transition: all 0.3s ease;
   min-height: 75px;
 }
@@ -93,11 +84,10 @@ html {
 }
 .skill-card:hover {
   transform: translateY(-4px);
-  border-color: #45c1a0;
-  box-shadow: 0 6px 25px rgba(69, 193, 160, 0.15);
+  border-color: var(--border-cards-hover);
+  box-shadow: var(--shadow-hover);
 }
 
-/* ===== Ikoner ===== */
 .skill-icon {
   flex-shrink: 0;
   /* background: #2c2d2f; */
@@ -125,12 +115,12 @@ html {
 /* ===== Text i korten ===== */
 .skill-text h3 {
   font-size: 1.2rem;
-  color: #f8f8f2;
+  color: var(--primary-text);
   margin-bottom: 0.3rem;
 }
 
 .skill-text p {
   font-size: 0.95rem;
-  color: #a9a9a9;
+  color: var(--secondary-text);
   line-height: 1.5;
 }

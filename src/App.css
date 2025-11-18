@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
-root {
-  --bg-dark: #1a1a1a;
-  --bg-card: #232323;
-  --text-light: #f8f8f2;
-  --text-muted: #ccc;
-  --accent-green: #45c1a0;
-  --accent-blue: #66d9ef;
-  --border-dark: #3b3b3b;
-  --shadow-dark: rgba(0, 0, 0, 0.5);
+:root {
+  --bg-color-dark: #1a1a1a9b;
+  --bg-color-grey:  rgba(32, 32, 32, 0.5);
+  --bg-cards: #232323;
+  --primary-text: #e1e0e0;
+  --secondary-text: #a9a9a9;
+  --accent-color: #45c1a0;
+  --border-cards: 1px solid #333;
+  --border-cards-hover: #45c1a0;
+  --shadow-primary: 0 6px 14px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 22px rgba(69, 193, 160, 0.15)
+  --border-radius-cards: 12px;
   --nav-h: 75px;
 }
 
@@ -22,7 +25,6 @@ body,
 #root {
   height: 100%;
   margin: 0;
-  background-color: var(--bg-dark);
 }
 
 main,
@@ -52,15 +54,7 @@ ul {
   padding: 0;
 }
 
-a {
-  color: var(--accent-blue);
-  text-decoration: none;
-  transition: 0.3s ease;
-}
 
-a:hover {
-  color: var(--accent-green);
-}
 main {
   padding-top: 80px;
 }

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
+import "../../App.css"
 
 interface ContactProps {
   onClose: () => void;
