@@ -12,12 +12,12 @@
   {
     "id": 2,
     "name": "chat-app",
-    "description": "A real-time chat application powered by Socket.io, featuring live message updates",
+    "description": "A real-time chat application powered by Socket.io. Created as a collaborative side project together with classmates.",
     "html_url": "https://github.com/ahmadardal/fos25-chat-app",
     "homepage": "",
     "stargazers_count": 1,
     "forks_count": 3,
-    "language": "JavaScript"
+    "language": "TypeScript"
   },
   {
     "id": 3,

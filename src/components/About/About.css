@@ -26,6 +26,11 @@ html {
   justify-content: center;
 }
 
+/* Mobile-first: show the About text above the profile image */
+.about-text {
+  order: -1;
+}
+
 @media (min-width: 900px) {
   .about-wrapper {
     gap: 3rem;
@@ -43,6 +48,7 @@ html {
   }
   .about-text {
     flex: 1;
+    order: 0; /* reset ordering on desktop so profile sits left, text right */
   }
   .about-profile .flip-inner {
     margin: 0; /* keep image tight to the left */

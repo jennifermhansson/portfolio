@@ -26,13 +26,19 @@ function About() {
     {
       icon: <CodeXml size={28} />,
       title: "Current Tech stack",
-      desc: "React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations, Postman",
+      desc: "React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations, TailwindCSS, Testing",
       color: "cyan",
     },
     {
       icon: <Database size={28} />,
       title: "Up next",
-      desc: "Node.js, PHP, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD",
+      desc: (
+        <>
+          Node.js, PHP, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD,
+          {" "}
+          <strong>Looking for LIA opportunities from September 2026!</strong>
+        </>
+      ),
       color: "lime",
     },
     {
@@ -56,7 +62,7 @@ desc: (
     {
       icon: <Puzzle size={28} />,
       title: "Agile Methodology",
-      desc: "Structured problem-solving meets collaborative Agile methodology.",
+      desc: "Structured problem solving meets collaborative Agile methodology, combining clear thinking with adaptive teamwork to move projects forward with focus and momentum",
       color: "orange",
     },
     
