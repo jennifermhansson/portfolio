@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
-  --bg-color-dark: #1a1a1a9b;
-  --bg-color-grey:  rgba(32, 32, 32, 0.5);
-  --bg-cards: #232323;
+  --bg-color-dark: #000000;
+  --bg-color-grey:  #000;
+  --bg-cards: #101010;
   --primary-text: #e1e0e0;
   --secondary-text: #a9a9a9;
   --accent-color: #45c1a0;
@@ -40,6 +40,7 @@ body {
   font-family: "Inconsolata", sans-serif;
   color: var(--text-light);
   overflow-x: hidden;
+  background-color: #1b1b1b;
 }
 
 h1,

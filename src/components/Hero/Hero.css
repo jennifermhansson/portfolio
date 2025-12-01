@@ -16,6 +16,13 @@
   z-index: 1;
 }
 
+.halo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .flip-card {
   perspective: 1000px;
 }
@@ -140,8 +147,8 @@
   .hero {
     flex-direction: row;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     gap: 4rem;
     padding: 7rem 5rem;
     min-height: 60vh;

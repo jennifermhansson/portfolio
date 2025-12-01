@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import profileFront from "../../assets/profilephoto.webp";
-import profileBack from "../../assets/photojennifer_animated.webp";
 import "./Hero.css";
+import HaloBackground from "./HaloBackground";
 import "../../App.css"
 
 export default function Hero() {
@@ -20,18 +19,7 @@ export default function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="hero-image-section">
-        <div className="flip-card">
-          <div className="flip-inner">
-            <div className="flip-front">
-              <img src={profileFront} alt="Jennifer Hansson" />
-            </div>
-            <div className="flip-back">
-              <img src={profileBack} alt="Animated Jennifer" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <HaloBackground />
 
       <div className="hero-content">
         <p id="hello">Hello!</p>

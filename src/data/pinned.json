@@ -13,10 +13,10 @@
     "id": 2,
     "name": "chat-app",
     "description": "A real-time chat application powered by Socket.io, featuring live message updates",
-    "html_url": "https://github.com/jennifermhansson/chat-app",
+    "html_url": "https://github.com/ahmadardal/fos25-chat-app",
     "homepage": "",
-    "stargazers_count": 0,
-    "forks_count": 1,
+    "stargazers_count": 1,
+    "forks_count": 3,
     "language": "JavaScript"
   },
   {
@@ -24,7 +24,7 @@
     "name": "beanbutton",
     "description": "A fun side project. An interactive app to track brews and give kudos to the best brewer",
     "html_url": "https://github.com/jennifermhansson/beanbutton",
-    "homepage": "",
+    "homepage": "https://jennifermhansson.github.io/beanbutton/",
     "stargazers_count": 1,
     "forks_count": 0,
     "language": "JavaScript"

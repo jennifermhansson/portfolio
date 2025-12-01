@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Contact from "./components/Contact/Contact";
 import "./App.css";
-import BackgroundParticles from "./components/BackgroundParticles";
+// BackgroundParticles removed; using Vanta HALO in Hero instead
 
 const About = lazy(() => import("./components/About/About"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <BackgroundParticles />
+      {/* Vanta HALO background is now inside the Hero component */}
 
       <Navbar onContactClick={() => setShowContact(true)} />
 
