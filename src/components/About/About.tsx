@@ -36,7 +36,7 @@ function About() {
         <>
           Node.js, PHP, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD,
           {" "}
-          <strong>Looking for LIA opportunities from September 2026!</strong>
+          <strong>LIA September 2026!</strong>
         </>
       ),
       color: "lime",
@@ -46,7 +46,7 @@ function About() {
       title: "About me",
 desc: (
   <>
-    From people problems to code problems — over a decade in HR turned into a{" "}
+    From people problems to code problems, over a decade in HR turned into a{" "}
     <span style={{ 
       fontWeight: "bold",
       background: "linear-gradient(to left, #45c1a0, #f92672)",
@@ -62,7 +62,7 @@ desc: (
     {
       icon: <Puzzle size={28} />,
       title: "Agile Methodology",
-      desc: "Structured problem solving meets collaborative Agile methodology, combining clear thinking with adaptive teamwork to move projects forward with focus and momentum",
+      desc: "From structured teamwork to smooth delivery, my Agile mindset shapes how I build and solve.",
       color: "orange",
     },
     
