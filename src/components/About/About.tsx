@@ -73,6 +73,7 @@ desc: (
       <div className="about-wrapper">
         <div className="about-content-row">
           <div className="about-profile">
+            
             <div className="flip-card">
               <div className="flip-inner">
                 <div className="flip-front">
