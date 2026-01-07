@@ -29,6 +29,10 @@ function ProjectSlider({ repos }: Props) {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    adaptiveHeight: true,
+    centerMode: false,
+    variableWidth: false,
+    swipeToSlide: true,
     responsive: [
       // At widths <= 900px show 2 slides
       { breakpoint: 900, settings: { slidesToShow: Math.min(2, repos.length) } },
