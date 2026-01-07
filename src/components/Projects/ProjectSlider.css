@@ -30,10 +30,26 @@
 	}
 
 	.projects-grid .slick-slide .project-card{
-		width:100% !important;
-		max-width: none;
+		/* limit width so card isn't edge-to-edge */
+		width:92% !important;
+		max-width:420px;
 		margin:0 auto;
 		box-sizing: border-box;
-		padding: 1.2rem;
+		padding: 1rem;
+	}
+
+	/* Stack header and footer content to avoid stretched spacing */
+	.projects-grid .slick-slide .project-card .project-header{
+		display:flex;
+		flex-direction:column;
+		align-items:flex-start;
+		gap:0.35rem;
+	}
+
+	.projects-grid .slick-slide .project-card .project-footer{
+		display:flex;
+		flex-direction:column;
+		align-items:flex-start;
+		gap:0.5rem;
 	}
 }
