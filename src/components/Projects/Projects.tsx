@@ -4,22 +4,20 @@ import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import "./Projects.css";
 import "../../App.css"
 
-// 🔧 Pinned repos via lokal JSON
 import pinned from "../../data/pinned.json";
+import ProjectSlider from "./ProjectSlider";
 
-// Samma interface du redan använder
 interface Repo {
   id: number;
   name: string;
   description: string;
   html_url: string;
   homepage: string;
-  stargazers_count: number;
+  stargazers_count: number | string;
   forks_count: number;
   language: string;
 }
 
-// 🔧 Fake fetch (lätt att byta senare mot Riktig API via serverless)
 async function fetchPinnedRepos(): Promise<Repo[]> {
   return pinned;
 }
@@ -30,27 +28,12 @@ function Projects() {
   const hasLoaded = useRef(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  // Lazy load när sektionen kommer in i viewport
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry) return;
-
-        if (entry.isIntersecting && !hasLoaded.current) {
-          hasLoaded.current = true;
-          setLoading(true);
-
-          fetchPinnedRepos()
-            .then((data) => setRepos(data))
-            .finally(() => setLoading(false));
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    // Load pinned repos immediately so the slider is visible without scrolling.
+    setLoading(true);
+    fetchPinnedRepos()
+      .then((data) => setRepos(data))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -86,46 +69,7 @@ function Projects() {
             Loading projects...
           </p>
         ) : (
-          repos.map((repo) => (
-            <motion.div
-              key={repo.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="project-card"
-            >
-              <div className="project-header">
-                <h3>
-                  <Github size={18} /> {repo.name}
-                </h3>
-                <span>{repo.language}</span>
-              </div>
-
-              <p>{repo.description}</p>
-
-              <div className="project-footer">
-                <div className="stats">
-                  <span>
-                    <Star size={14} /> {repo.stargazers_count}
-                  </span>
-                  <span>
-                    <GitFork size={14} /> {repo.forks_count}
-                  </span>
-                </div>
-                <div className="links">
-                  <a href={repo.html_url} target="_blank" rel="noreferrer">
-                    <Github size={16} />
-                  </a>
-                  {repo.homepage && (
-                    <a href={repo.homepage} target="_blank" rel="noreferrer">
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))
+          <ProjectSlider repos={repos} />
         )}
       </div>
 

@@ -1,0 +1,14 @@
+.slider-container{padding:1rem 0;}
+.slide-card{display:none}
+.projects-grid .slick-slide .project-card{width:320px;max-width:350px;margin:0 auto;z-index:10;}
+.projects-grid .slick-slide{display:flex;justify-content:center}
+.project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;z-index:1;}
+.project-desc{opacity:0.9;font-size:0.95rem;margin-bottom:0.6rem}
+.project-footer{display:flex;justify-content:space-between;align-items:center}
+.stats span{margin-right:0.6rem;color:#9fb7c3}
+.links a{margin-left:0.5rem;color:#45c1a0}
+.lang{font-size:0.85rem;color:#9fb7c3}
+
+/* Ensure slider spans full grid and slides center */
+.projects-grid .slider-container{grid-column:1/-1;width:100%}
+.slider-container .slick-slide{display:flex;justify-content:center}

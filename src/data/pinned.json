@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "portfolio",
+    "name": "Portfolio",
     "description": "My portfolio showcasing projects, skills, and design aesthetics with smooth animations and clean UI",
     "html_url": "https://github.com/jennifermhansson/portfolio",
     "homepage": "https://jennifermhansson.github.io/portfolio/",
@@ -11,8 +11,8 @@
   },
   {
     "id": 2,
-    "name": "chat-app",
-    "description": "A real-time chat application powered by Socket.io. Created as a collaborative side project together with classmates.",
+    "name": "Chat-app",
+    "description": "A real-time chat application powered by Socket.io. Created as a collaborative side project",
     "html_url": "https://github.com/ahmadardal/fos25-chat-app",
     "homepage": "",
     "stargazers_count": 1,
@@ -21,8 +21,8 @@
   },
   {
     "id": 3,
-    "name": "beanbutton",
-    "description": "A fun side project. An interactive app to track brews and give kudos to the best brewer",
+    "name": "Coffee Button",
+    "description": "A fun side project. An interactive app to live track brews, give kudos to brewers and follow the leaderboard for best brewer",
     "html_url": "https://github.com/jennifermhansson/beanbutton",
     "homepage": "https://jennifermhansson.github.io/beanbutton/",
     "stargazers_count": 1,
@@ -31,12 +31,22 @@
   },
   {
     "id": 4,
-    "name": "calculator",
-    "description": "Simple calculator focused on fun design, smooth user interactions and accurate functionality",
-    "html_url": "https://github.com/jennifermhansson/calculator",
+    "name": "Recipe Finder",
+    "description": "An interactive recipe discovery app that helps users find recipes based on preferences, ingredients and diet",
+    "html_url": "https://github.com/mirafl0res/examination-kurs2",
     "homepage": "",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript"
+    "language": "TypeScript"
+  },
+   {
+    "id": 5,
+    "name": "Julklappsleken",
+    "description": "App for a Christmas present card game. Draw a card, follow the instructions and swap presents",
+    "html_url": "https://github.com/jennifermhansson/game",
+    "homepage": "",
+    "stargazers_count": "",
+    "forks_count": 0,
+    "language": "React Native"
   }
 ]

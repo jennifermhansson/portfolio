@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import "./Footer.css";
 import "../../App.css"
 
-function Footer({ onContactClick }) {
+interface FooterProps {
+  onContactClick: () => void;
+}
+
+function Footer({ onContactClick }: FooterProps) {
   return (
     <motion.footer
       className="footer"
