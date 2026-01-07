@@ -30,8 +30,12 @@ function ProjectSlider({ repos }: Props) {
     autoplaySpeed: 4000,
     pauseOnHover: true,
     responsive: [
-      { breakpoint: 900, settings: { slidesToShow: 2 } },
+      // At widths <= 900px show 2 slides
+      { breakpoint: 900, settings: { slidesToShow: Math.min(2, repos.length) } },
+      // At widths <= 600px show 1 slide
       { breakpoint: 600, settings: { slidesToShow: 1 } },
+      // Extra small screens
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
     ],
   };
 
