@@ -29,7 +29,7 @@ function Projects() {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Load pinned repos immediately so the slider is visible without scrolling.
+   
     setLoading(true);
     fetchPinnedRepos()
       .then((data) => setRepos(data))
@@ -46,7 +46,7 @@ function Projects() {
       transition={{ duration: 0.9 }}
       viewport={{ once: true }}
     >
-      {/* HEADER */}
+  
       <motion.div
         className="projects-header"
         initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ function Projects() {
         </p>
       </motion.div>
 
-      {/* CONTENT */}
+
       <div className="projects-grid">
         {loading ? (
           <p style={{ textAlign: "center", color: "#45c1a0" }}>
@@ -73,7 +73,7 @@ function Projects() {
         )}
       </div>
 
-      {/* SEE ALL BUTTON */}
+
       <div className="projects-all">
         <a
           href="https://github.com/jennifermhansson"

@@ -1,14 +1,8 @@
-.slider-container{padding:1rem 0;display:flex;justify-content:center}
-.slide-card{display:none}
-/* Stronger selector to override global .project-card rules and ensure centered, fixed-width cards */
-.projects-grid .slider-container .slick-slide .project-card{
-	width:320px !important;
-	max-width:350px !important;
-	margin:0 auto !important;
-	box-sizing:border-box;
-	z-index:10;
-}
-.projects-grid .slick-slide{display:flex;justify-content:center;padding:0 6px}
+.slider-container{padding:1rem 0;}
+
+.slide-card{display:block;width:100%;max-width:350px;margin:0 auto;box-sizing:border-box}
+.projects-grid .slick-slide .project-card{width:100%;max-width:100%;margin:0 auto;z-index:10}
+.projects-grid .slick-slide{display:block;padding:0}
 .project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;z-index:1;}
 .project-desc{opacity:0.9;font-size:0.95rem;margin-bottom:0.6rem}
 .project-footer{display:flex;justify-content:space-between;align-items:center}
@@ -16,47 +10,78 @@
 .links a{margin-left:0.5rem;color:#45c1a0}
 .lang{font-size:0.85rem;color:#9fb7c3}
 
-/* Ensure slider spans full grid and slides center */
+
 .projects-grid .slider-container{grid-column:1/-1;width:100%}
-.slider-container .slick-slide{display:flex;justify-content:center;padding:0 6px}
 
-/* Mobile: make each slide fill most of the viewport so only one is visible */
-@media (max-width: 600px) {
-	/* Make each slide full-width and prevent overlap */
-	.projects-grid .slick-list,
-	.projects-grid .slick-track {
-		display: block;
-	}
 
-	.projects-grid .slick-slide {
-		display: block !important;
-		float: none !important;
-		width: 100% !important;
-		padding: 0 4px;
-		box-sizing: border-box;
-	}
+.projects-grid .slick-dots{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:0.5rem;
+	margin-top:1rem;
+	padding:0;
+	list-style:none;
+	
+	position:static;
+	z-index:50;
+}
+.projects-grid .slick-dots li{width:auto;height:auto}
+.projects-grid .slick-dots li button{background:transparent;border:none;padding:0;cursor:pointer}
+.projects-grid .slick-dots li button:before{
+	font-size:10px;
+	color:var(--accent-color);
+	opacity:0.9;
+}
+.projects-grid .slick-dots li.slick-active button:before{
+	color:#fff;
+	opacity:1;
+}
 
-	.projects-grid .slick-slide .project-card{
-		/* limit width so card isn't edge-to-edge */
-		width:92% !important;
-		max-width:420px;
-		margin:0 auto;
-		box-sizing: border-box;
-		padding: 1rem;
-	}
 
-	/* Stack header and footer content to avoid stretched spacing */
-	.projects-grid .slick-slide .project-card .project-header{
-		display:flex;
-		flex-direction:column;
-		align-items:flex-start;
-		gap:0.35rem;
-	}
+.slider-container{position:relative;padding:1rem 0}
 
-	.projects-grid .slick-slide .project-card .project-footer{
-		display:flex;
-		flex-direction:column;
-		align-items:flex-start;
-		gap:0.5rem;
-	}
+
+.slider-viewport{overflow:hidden}
+.slider-track{display:flex;transition:transform 600ms ease;will-change:transform}
+
+
+.slider-slide{flex:0 0 calc(100% / var(--slides-to-show));display:flex;justify-content:center;padding:0 8px;box-sizing:border-box}
+
+
+.project-card{width:100%;max-width:320px;background:var(--bg-cards);border-radius:12px;padding:1rem;box-sizing:border-box;--card-max:320px}
+.project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
+.project-desc{opacity:0.95;font-size:0.95rem;margin-bottom:0.6rem}
+.project-footer{display:flex;justify-content:space-between;align-items:center}
+.stats span{margin-right:0.6rem;color:#9fb7c3}
+.links a{margin-left:0.5rem;color:#45c1a0}
+.lang{font-size:0.85rem;color:#9fb7c3}
+
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--bg-cards);color:#fff;border:none;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.25)}
+.slider-arrow.prev{left:8px}
+.slider-arrow.next{right:8px}
+.slider-arrow:hover{filter:brightness(0.95)}
+.slider-arrow:focus{outline:2px solid rgba(255,255,255,0.12)}
+
+
+.slider-dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.slider-dots .dot{width:2px;height:2px;background:var(--muted, #6b6b6b);border-radius:80%;border:none;cursor:pointer}
+.slider-dots .dot.active{background:var(--accent-color, #2fc4a0);transform:scale(1.1)}
+.slider-dots .dot:focus{outline:2px solid rgba(0,0,0,0.12)}
+
+
+@media (max-width:480px){
+  .project-card{max-width:300px;padding:0.9rem}
+}
+
+@media (min-width:901px){
+  :root{--slides-to-show:3}
+}
+
+
+@media (max-width:600px){
+	.slider-arrow{top:50%;width:30px;height:30px}
+	.slider-arrow.prev{left:calc(50% - (var(--card-max,320px) / 2) - 22px)}
+	.slider-arrow.next{right:calc(50% - (var(--card-max,320px) / 2) - 22px)}
+	.slider-arrow{z-index:60}
 }
