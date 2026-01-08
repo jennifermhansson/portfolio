@@ -31,7 +31,7 @@
 }
 
 .navbar a:hover {
-  color: #66d9ef;
+  color: var(--accent-color);
 }
 
 .navbar a::after {
@@ -41,7 +41,7 @@
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background-color: #66d9ef;
+  background-color: var(--accent-color);
   transition: width 0.3s ease;
 }
 
