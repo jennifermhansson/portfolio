@@ -57,11 +57,15 @@
 .links a{margin-left:0.5rem;color:#45c1a0}
 .lang{font-size:0.85rem;color:#9fb7c3}
 
-.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--bg-cards);color:#fff;border:none;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.25)}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--bg-cards);color:#fff;border:none;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.25);-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;outline:none}
 .slider-arrow.prev{left:8px}
 .slider-arrow.next{right:8px}
 .slider-arrow:hover{filter:brightness(0.95)}
-.slider-arrow:focus{outline:2px solid rgba(255,255,255,0.12)}
+/* Remove default browser focus/tap highlight; show subtle themed ring for keyboard focus */
+.slider-arrow:focus{outline:none}
+.slider-arrow:focus-visible{box-shadow:0 0 0 4px rgba(47,196,160,0.14)}
+/* Active (pressed) state */
+.slider-arrow:active{transform:translateY(-50%) scale(0.96);background:rgba(0,0,0,0.06)}
 
 
 .slider-dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
