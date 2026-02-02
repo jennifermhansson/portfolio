@@ -30,12 +30,12 @@ function About() {
     },
     {
       icon: <Database size={28} />,
-      title: "Up next",
+      title: "Learning now",
       desc: (
         <>
           Node.js, PHP, Express, MongoDB, PostgreSQL, Docker, Next.js, CI/CD,
           {" "}
-          <strong>LIA September 2026!</strong>
+          <strong>Up next: LIA September 2026!</strong>
         </>
       ),
       color: "lime",
