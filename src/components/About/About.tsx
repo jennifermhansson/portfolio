@@ -4,7 +4,6 @@ import "./About.css";
 import "../../App.css"
 import type { JSX } from "react";
 import profileFront from "../../assets/profilephoto.webp";
-import profileBack from "../../assets/photojennifer_animated.webp";
 
 interface Skill {
   icon: JSX.Element;
@@ -73,19 +72,10 @@ desc: (
       <div className="about-wrapper">
         <div className="about-content-row">
           <div className="about-profile">
-            
-            <div className="flip-card">
-              <div className="flip-inner">
-                <div className="flip-front">
-                  <img src={profileFront} alt="Jennifer Hansson" />
-                </div>
-                <div className="flip-back">
-                  <img src={profileBack} alt="Animated Jennifer" />
-                </div>
-              </div>
+            <div className="profile-img">
+              <img src={profileFront} alt="Jennifer Hansson" />
             </div>
           </div>
-
           <div className="about-text">
             <h2>My Journey</h2>
             <p>
@@ -113,6 +103,7 @@ desc: (
             </div>
           </div>
         </div>
+        </div>
 
         <div className="skills-grid">
           {skills.map((skill, i) => (
@@ -130,7 +121,7 @@ desc: (
             </motion.div>
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }
