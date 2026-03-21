@@ -7,7 +7,8 @@
     "homepage": "https://jennifermhansson.github.io/portfolio/",
     "stargazers_count": 0,
     "forks_count": 0,
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "technologies": ["React", "TypeScript", "CSS"]
   },
   {
     "id": 2,
@@ -17,7 +18,9 @@
     "homepage": "",
     "stargazers_count": 1,
     "forks_count": 3,
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "technologies": ["React", "TypeScript", "Socket.io", "CSS"],
+    "imageKey": "chatapp"
   },
   {
     "id": 3,
@@ -27,7 +30,9 @@
     "homepage": "https://jennifermhansson.github.io/beanbutton/",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "technologies": ["React", "JavaScript", "Firebase", "CSS"],
+    "imageKey": "coffeebg"
   },
   {
     "id": 4,
@@ -37,9 +42,11 @@
     "homepage": "",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "technologies": ["React", "TypeScript", "API", "CSS"],
+    "imageKey": "recipeapp"
   },
-   {
+  {
     "id": 5,
     "name": "Julklappsleken",
     "description": "App for a Christmas present card game. Draw a card, follow the instructions and swap presents",
@@ -47,6 +54,9 @@
     "homepage": "",
     "stargazers_count": "",
     "forks_count": 0,
-    "language": "React Native"
+    "language": "React Native",
+    "technologies": ["React Native", "TypeScript", "Expo", "CSS"],
+    "imageKey": "christmasapp"
+
   }
 ]

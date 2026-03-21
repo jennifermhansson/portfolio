@@ -3,7 +3,7 @@
   background: var(--bg-color-grey);
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   scroll-margin-top: 90px;
 }
 
@@ -16,7 +16,7 @@
 
 #my-projects {
   max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin: 1.2rem auto 3rem auto;
   color: var(--primary-text);
   font-size: 1.1rem;
   line-height: 1.6;
