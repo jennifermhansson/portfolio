@@ -19,7 +19,7 @@
     "stargazers_count": 1,
     "forks_count": 3,
     "language": "TypeScript",
-    "technologies": ["React", "TypeScript", "Socket.io", "CSS"],
+    "technologies": ["React", "TypeScript", "Socket.io", "TailwindCSS"],
     "imageKey": "chatapp"
   },
   {
@@ -31,7 +31,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "language": "JavaScript",
-    "technologies": ["React", "JavaScript", "Firebase", "CSS"],
+    "technologies": ["React", "JavaScript", "Firebase"],
     "imageKey": "coffeebg"
   },
   {
@@ -43,7 +43,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "language": "TypeScript",
-    "technologies": ["React", "TypeScript", "API", "CSS"],
+    "technologies": ["React", "TypeScript", "CSS"],
     "imageKey": "recipeapp"
   },
   {
@@ -55,8 +55,7 @@
     "stargazers_count": "",
     "forks_count": 0,
     "language": "React Native",
-    "technologies": ["React Native", "TypeScript", "Expo", "CSS"],
+    "technologies": ["React Native", "TypeScript", "Expo"],
     "imageKey": "christmasapp"
-
   }
 ]

@@ -101,7 +101,7 @@ function About() {
                 Take a look at my journey so far and what i've about to explore
                 next!
               </p>
-              <div
+              {/*               <div
                 className="svg-arrow"
                 onClick={scrollToProjects}
                 style={{ cursor: 'pointer' }}
@@ -119,7 +119,7 @@ function About() {
                     strokeLinecap="round"
                   />
                 </svg>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
