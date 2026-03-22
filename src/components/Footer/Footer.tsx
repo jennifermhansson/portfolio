@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import "./Footer.css";
-import "../../App.css"
+import { motion } from 'framer-motion';
+import './Footer.css';
+import '../../App.css';
 
 interface FooterProps {
   onContactClick: () => void;
@@ -42,7 +42,7 @@ function Footer({ onContactClick }: FooterProps) {
           </a>
         </div>
         <p className="footer-copy">
-          © 2025 <span>Jennifer Hansson</span> – All rights reserved.
+          © 2026 <span>Jennifer Hansson</span> – All rights reserved.
         </p>
       </div>
     </motion.footer>

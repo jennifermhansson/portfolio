@@ -6,6 +6,7 @@
 .projects-grid .slider-container {
   grid-column: 1 / -1;
   width: 100%;
+  margin: 0 auto;
 }
 
 .slider-viewport {
@@ -24,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: 0 3px;
+  padding: 0 0px;
   box-sizing: border-box;
 }
 
@@ -139,7 +140,7 @@
 
 .project-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 1.2rem 1.2rem;
   margin-top: auto;
@@ -186,11 +187,11 @@
 }
 
 .slider-arrow.prev {
-  left: 8px;
+  left: -24px;
 }
 
 .slider-arrow.next {
-  right: 8px;
+  right: -24px;
 }
 
 .slider-arrow:hover {
@@ -255,5 +256,11 @@
 
   .slider-arrow.next {
     right: 6px;
+  }
+}
+
+@media (min-width: 901px) {
+  .projects-grid .slider-container {
+    max-width: 1120px;
   }
 }

@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Github, ExternalLink, Star, GitFork } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import './ProjectSlider.css';
 import recipeAppImage from '../../assets/recipeapp.png';
 import chatAppImage from '../../assets/chatapp.png';
 import coffeeBgImage from '../../assets/coffeebg.png';
+import portfolio from '../../assets/portfolio.png';
 import christmasimage from '../../assets/christmasapp.png';
 
 interface Repo {
@@ -12,8 +13,6 @@ interface Repo {
   description: string;
   html_url: string;
   homepage: string;
-  stargazers_count: number | string;
-  forks_count: number;
   language: string;
   technologies?: string[];
   imageKey?: string;
@@ -30,6 +29,7 @@ const localImageMap: Record<string, string> = {
   chatapp: chatAppImage,
   coffeebg: coffeeBgImage,
   christmasapp: christmasimage,
+  portfolio: portfolio,
 };
 
 function getProjectImage(repo: Repo) {
@@ -203,14 +203,6 @@ function ProjectSlider({
                   </div>
 
                   <div className="project-footer">
-                    <div className="stats">
-                      <span>
-                        <Star size={12} /> {repo.stargazers_count}
-                      </span>
-                      <span>
-                        <GitFork size={12} /> {repo.forks_count}
-                      </span>
-                    </div>
                     <div className="links">
                       <a
                         href={repo.html_url}
@@ -218,7 +210,7 @@ function ProjectSlider({
                         rel="noreferrer"
                         aria-label={`Open ${repo.name} on GitHub`}
                       >
-                        <Github size={14} />
+                        <Github size={20} />
                       </a>
                       {repo.homepage && repo.homepage.length > 0 && (
                         <a
@@ -227,7 +219,7 @@ function ProjectSlider({
                           rel="noreferrer"
                           aria-label={`Open ${repo.name} demo`}
                         >
-                          <ExternalLink size={14} />
+                          <ExternalLink size={20} />
                         </a>
                       )}
                     </div>

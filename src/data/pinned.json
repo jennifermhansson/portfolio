@@ -8,7 +8,8 @@
     "stargazers_count": 0,
     "forks_count": 0,
     "language": "TypeScript",
-    "technologies": ["React", "TypeScript", "CSS"]
+    "technologies": ["React", "TypeScript", "CSS", "Three.JS"],
+    "imageKey": "portfolio"
   },
   {
     "id": 2,
@@ -43,7 +44,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "language": "TypeScript",
-    "technologies": ["React", "TypeScript", "CSS"],
+    "technologies": ["React", "TypeScript", "CSS", "API"],
     "imageKey": "recipeapp"
   },
   {

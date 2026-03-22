@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { Github, ExternalLink, Star, GitFork } from "lucide-react";
-import "./Projects.css";
-import "../../App.css"
+import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Github, ExternalLink, Star, GitFork } from 'lucide-react';
+import './Projects.css';
+import '../../App.css';
 
-import pinned from "../../data/pinned.json";
-import ProjectSlider from "./ProjectSlider";
+import pinned from '../../data/pinned.json';
+import ProjectSlider from './ProjectSlider';
 
 interface Repo {
   id: number;
@@ -29,7 +29,6 @@ function Projects() {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-   
     setLoading(true);
     fetchPinnedRepos()
       .then((data) => setRepos(data))
@@ -46,7 +45,6 @@ function Projects() {
       transition={{ duration: 0.9 }}
       viewport={{ once: true }}
     >
-  
       <motion.div
         className="projects-header"
         initial={{ opacity: 0, y: 20 }}
@@ -54,7 +52,7 @@ function Projects() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2>Featured Projects</h2>
+        <h2>My Projects</h2>
         <p id="my-projects">
           I believe in learning by doing and every line of code is a step
           forward in mastering my craft. Here are some of my highlighted
@@ -62,17 +60,15 @@ function Projects() {
         </p>
       </motion.div>
 
-
       <div className="projects-grid">
         {loading ? (
-          <p style={{ textAlign: "center", color: "#45c1a0" }}>
+          <p style={{ textAlign: 'center', color: '#45c1a0' }}>
             Loading projects...
           </p>
         ) : (
           <ProjectSlider repos={repos} />
         )}
       </div>
-
 
       <div className="projects-all">
         <a

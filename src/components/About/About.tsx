@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion';
-import { CodeXml, Database, Puzzle, Heart } from 'lucide-react';
+import {
+  ArrowDownRight,
+  CodeXml,
+  Database,
+  Heart,
+} from 'lucide-react';
 import './About.css';
 import '../../App.css';
 import type { JSX } from 'react';
 import profileFront from '../../assets/profilephoto.webp';
 
-interface Skill {
+interface HighlightCard {
   icon: JSX.Element;
   title: string;
-  desc: string | JSX.Element;
+  desc: string;
   color: string;
 }
 
@@ -20,50 +25,24 @@ function About() {
     }
   };
 
-  const skills: Skill[] = [
+  const highlightCards: HighlightCard[] = [
     {
-      icon: <CodeXml size={28} />,
-      title: 'Current Tech stack',
-      desc: 'React, Javascript, TypeScript, Git/GitHub, Firebase, API integrations, TailwindCSS, Testing',
+      icon: <CodeXml size={24} />,
+      title: 'Tech Stack',
+      desc: 'React, JavaScript, TypeScript, Git/GitHub, Firebase, API integrations, TailwindCSS and testing.',
       color: 'cyan',
     },
     {
-      icon: <Database size={28} />,
-      title: 'Learning now',
-      desc: (
-        <>
-          Node.js, Bun, PHP, Fastify, Express, MongoDB, PostgreSQL, Docker,
-          CI/CD, <strong>Up next: LIA September 2026!</strong>
-        </>
-      ),
+      icon: <Database size={24} />,
+      title: 'Currently Learning',
+      desc: 'Node.js, Bun, PHP, Fastify, Express, MongoDB, PostgreSQL, Docker and CI/CD.',
       color: 'lime',
     },
     {
-      icon: <Heart size={28} />,
-      title: 'About me',
-      desc: (
-        <>
-          From people problems to code problems, over a decade in HR turned into
-          a{' '}
-          <span
-            style={{
-              fontWeight: 'bold',
-              background: 'linear-gradient(to left, #45c1a0, #f92672)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            passion for tech
-          </span>
-        </>
-      ),
+      icon: <Heart size={24} />,
+      title: 'Beyond Code',
+      desc: 'A former HR professional turned developer, bringing structure, collaboration and curiosity into every build.',
       color: 'pink',
-    },
-    {
-      icon: <Puzzle size={28} />,
-      title: 'Agile Methodology',
-      desc: 'From structured teamwork to smooth delivery, my Agile mindset shapes how I build and solve.',
-      color: 'orange',
     },
   ];
 
@@ -72,76 +51,94 @@ function About() {
       className="about-section"
       id="about"
     >
-      <div className="about-wrapper">
-        <div className="about-content-row">
-          <div className="about-profile">
-            <div className="profile-img">
-              <img
-                src={profileFront}
-                alt="Jennifer Hansson"
-              />
+      <div className="about-container">
+        <motion.div
+          className="about-hero-card"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55 }}
+        >
+          <div className="about-hero-grid">
+            <div className="about-image-column">
+              <div className="about-image-frame">
+                <img
+                  src={profileFront}
+                  alt="Jennifer Hansson"
+                />
+              </div>
+
+              <div className="about-mini-card">
+                {/* <BriefcaseBusiness size={18} /> */}
+                <div>
+                  <span className="mini-card-label">Next step</span>
+                  <p>LIA • September 2026</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="about-text">
-            <h2>My Journey</h2>
-            <p>
-              I’m currently in my first year of Fullstack Development (Open
-              Source). I began with frontend, and now I’m eager to explore
-              backend and learn how modern web applications are built from the
-              ground up.
-            </p>
-            <br />
-            <p>
-              When I'm not writing code, you'll find me playing hide & seek with
-              my kids, sneaking off to the gym (hiding from the kids😉) or
-              playing video games preparing for a digital apocalypse.
-            </p>
-            <div className="scroll-prompt">
-              <p>
-                Take a look at my journey so far and what i've about to explore
-                next!
+
+            <div className="about-copy-column">
+              {/*  <span className="about-kicker">Fullstack Developer Student</span> */}
+
+              <h2>From HR to Fullstack</h2>
+
+              <p className="about-lead">
+                I’m a Fullstack Development student with a frontend foundation
+                and a growing passion for backend development. I enjoy building
+                clean, modern interfaces while learning how applications work
+                from end to end.
               </p>
-              {/*               <div
-                className="svg-arrow"
-                onClick={scrollToProjects}
-                style={{ cursor: 'pointer' }}
-              >
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
+
+              <p className="about-body">
+                Before tech, I spent over a decade in HR. That experience shaped
+                how I work today — structured, collaborative and focused on real
+                people and real problems.
+              </p>
+
+              <p className="about-body">
+                When I’m not coding, I’m usually with my kids, sneaking off to
+                the gym, or gaming my way through the digital apocalypse.
+              </p>
+
+              <div className="about-tags">
+                <span>Agile mindset</span>
+                <span>Problem solving</span>
+                <span>Frontend + Backend</span>
+                <span>User-focused</span>
+              </div>
+
+              <div className="about-actions">
+                <button
+                  type="button"
+                  className="about-primary-btn"
+                  onClick={scrollToProjects}
                 >
-                  <path
-                    d="M12 5v14M5 12l7 7 7-7"
-                    stroke="#45c1a0"
-                    strokeWidth={2}
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div> */}
+                  View Projects
+                  <ArrowDownRight size={18} />
+                </button>
+              </div>
             </div>
           </div>
+        </motion.div>
+
+        <div className="about-cards-grid">
+          {highlightCards.map((card, index) => (
+            <motion.article
+              key={index}
+              className="about-info-card"
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              whileHover={{ y: -5, scale: 1.01 }}
+            >
+              <div className={`about-card-icon ${card.color}`}>{card.icon}</div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+            </motion.article>
+          ))}
         </div>
       </div>
-
-      <div className="skills-grid">
-        {skills.map((skill, i) => (
-          <motion.div
-            className="skill-card"
-            key={i}
-            whileHover={{ scale: 1.04 }}
-            transition={{ type: 'spring', stiffness: 200 }}
-          >
-            <div className={`skill-icon ${skill.color}`}>{skill.icon}</div>
-            <div className="skill-text">
-              <h3>{skill.title}</h3>
-              <p>{skill.desc}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-      {/* </div> */}
     </section>
   );
 }

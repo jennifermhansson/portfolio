@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
-import HALO from "vanta/dist/vanta.halo.min";
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import HALO from 'vanta/dist/vanta.halo.min';
 
 const HaloBackground: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -21,13 +21,18 @@ const HaloBackground: React.FC = () => {
     });
 
     return () => {
-      if (vantaRef.current && typeof vantaRef.current.destroy === "function") {
+      if (vantaRef.current && typeof vantaRef.current.destroy === 'function') {
         vantaRef.current.destroy();
       }
     };
   }, []);
 
-  return <div ref={containerRef} className="halo-bg" />;
+  return (
+    <div
+      ref={containerRef}
+      className="halo-bg"
+    />
+  );
 };
 
 export default HaloBackground;
