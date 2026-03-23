@@ -1,14 +1,12 @@
-import { useState, useEffect, Suspense, lazy } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Footer from "./components/Footer/Footer";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Contact from "./components/Contact/Contact";
-import "./App.css";
+import { useState, useEffect, Suspense, lazy } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
+import './App.css';
 
-
-const About = lazy(() => import("./components/About/About"));
-const Projects = lazy(() => import("./components/Projects/Projects"));
+const About = lazy(() => import('./components/About/About'));
+const Projects = lazy(() => import('./components/Projects/Projects'));
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -19,20 +17,18 @@ function App() {
       if (hash) {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: 'smooth' });
         }
       }
     };
-    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener('hashchange', handleHashChange);
     handleHashChange();
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
     <>
-
       <Navbar onContactClick={() => setShowContact(true)} />
-
       <main>
         <section id="hero">
           <Hero />
@@ -40,7 +36,7 @@ function App() {
 
         <Suspense
           fallback={
-            <p style={{ color: "#3ca7c278", textAlign: "center" }}>.</p>
+            <p style={{ color: '#3ca7c278', textAlign: 'center' }}>.</p>
           }
         >
           <section id="about">
@@ -54,8 +50,6 @@ function App() {
       </main>
 
       <Footer onContactClick={() => setShowContact(true)} />
-      <ScrollToTop />
-
       {showContact && <Contact onClose={() => setShowContact(false)} />}
     </>
   );

@@ -1,10 +1,5 @@
 import { motion } from 'framer-motion';
-import {
-  ArrowDownRight,
-  CodeXml,
-  Database,
-  Heart,
-} from 'lucide-react';
+import { ArrowDownRight, CodeXml, Database, Heart } from 'lucide-react';
 import './About.css';
 import '../../App.css';
 import type { JSX } from 'react';
@@ -83,21 +78,34 @@ function About() {
               <h2>From HR to Fullstack</h2>
 
               <p className="about-lead">
-                I’m a Fullstack Development student with a frontend foundation
-                and a growing passion for backend development. I enjoy building
-                clean, modern interfaces while learning how applications work
+                I’m a Fullstack Developer with a frontend foundation, but my
+                heart is in backend development. I enjoy building clean, modern
+                interfaces, but I’m most curious about what happens behind the
+                scenes, the logic, the architecture and how everything connects
                 from end to end.
               </p>
 
               <p className="about-body">
-                Before tech, I spent over a decade in HR. That experience shaped
-                how I work today — structured, collaborative and focused on real
-                people and real problems.
+                From people problems to code problems, over a decade in HR
+                turned into a{' '}
+                <span
+                  style={{
+                    fontWeight: 'bold',
+                    background: 'linear-gradient(to left, #45c1a0, #f92672)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  passion for tech
+                </span>
+                . My background taught me structure, collaboration and the
+                importance of building solutions that actually help people.
               </p>
 
               <p className="about-body">
-                When I’m not coding, I’m usually with my kids, sneaking off to
-                the gym, or gaming my way through the digital apocalypse.
+                When I’m not coding, I’m playing hide & seek with my kids,
+                sneaking off to the gym (hiding from the kids😉), or gaming my
+                way through the digital apocalypse.
               </p>
 
               <div className="about-tags">
