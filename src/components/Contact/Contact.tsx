@@ -12,24 +12,24 @@ function Contact({ onClose }: ContactProps) {
   const form = useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const sendEmail = async (e: FormEvent) => {
-    e.preventDefault();
+    const sendEmail = async (e: FormEvent) => {
+      e.preventDefault();
 
-    if (!form.current) return;
+      if (!form.current) return;
 
-    try {
-      await emailjs.sendForm(
-        "service_tse40dd",
-        "template_6z1vdf6",
-        form.current,
-        { publicKey: "py8_xDhI9QA2xq1UF" }
-      );
-      setSuccess(true);
-      setTimeout(() => onClose(), 3500);
-    } catch (error: any) {
-      console.error("FAILED...", error.text);
-    }
-  };
+      try {
+        await emailjs.sendForm(
+          "service_tse40dd",
+          "template_6z1vdf6",
+          form.current,
+          { publicKey: "py8_xDhI9QA2xq1UF" }
+        );
+        setSuccess(true);
+        setTimeout(() => onClose(), 3500);
+      } catch (error: any) {
+        console.error("FAILED...", error.text);
+      }
+    };
 
   // ✅ Lyssna på Escape & Enter
   useEffect(() => {

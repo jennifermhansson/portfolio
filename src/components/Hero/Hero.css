@@ -24,7 +24,7 @@ body {
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -128,6 +128,12 @@ body {
 @media (min-width: 768px) {
   .scroll-prompt {
     display: block;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero {
+    text-align: center;
   }
 }
 
