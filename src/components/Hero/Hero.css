@@ -16,7 +16,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  text-align: start;
+  text-align: center;
   position: relative;
   z-index: 1;
   max-width: 100%;
@@ -135,12 +135,17 @@ body {
   .hero {
     text-align: center;
   }
+  .hero-content {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+  }
 }
 
 @media (min-width: 900px) {
   .hero {
     flex-direction: row;
-    text-align: center;
+    text-align: start;
     justify-content: flex-end;
     align-items: flex-end;
     gap: 4rem;
